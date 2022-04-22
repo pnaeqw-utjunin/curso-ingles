@@ -146,7 +146,25 @@ color: white;
 
 #selector2 li {
 
-   
+    
+    display:block;
+    padding: 15px;
+    border-top-style:dotted;
+    border-width: 1px;
+    border-right-style:none;
+    border-left-style:none;
+    
+    border-color: #279247;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    
+}
+
+#selector3 li a{
+
+    color: black;
     display:block;
     padding: 15px;
     border-top-style:dotted;
@@ -164,4 +182,9 @@ color: white;
 
 
 
-
+#selector3 li a:hover{
+    background-color: #c53838;
+    
+   
+    
+}
