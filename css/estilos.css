@@ -4,7 +4,7 @@ h1{color:rgb(255, 255, 255);}
 
 #sufijo_1{font-family:'arial';  font-size: 1em; font-weight: bold; color:red}
 #sufijo_2{font-family:'arial';  font-size: 1em; font-style: italic; color:blue}
-#sufijo_3{font-family:'arial';  font-size: 1em; font-style: italic; color:green}
+#sufijo_3{font-family:'arial';  font-size: 1em; font-style: italic; color:rgb(5, 138, 34)}
 #sufijo_4{font-family:'arial';  font-size: 1em; font-weight: bold; color:#FF0080}
 #sufijo_5{font-family:'arial';  font-size: 1em; font-weight: bold; color:#1cbd00}
 #sufijo_6{font-family:'arial';  font-size: 1em; font-weight: bold; color:purple}
@@ -148,7 +148,7 @@ color: white;
 
     
     display:block;
-    padding: 5px;
+    padding: 4px;
     border-top-style:dotted;
     border-width: 1px;
     border-right-style:none;
@@ -166,7 +166,7 @@ color: white;
 
     color: black;
     display:block;
-    padding: 5px;
+    padding: 4px;
     border-top-style:dotted;
     border-width: 1px;
     border-right-style:none;
