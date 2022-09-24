@@ -11,7 +11,7 @@ h1{color:rgb(255, 255, 255);}
 #sufijo_7{font-family:'arial';  font-size: 1em; font-weight: bold; color:#0CB7F2}
 #sufijo_8{font-family:'arial';  font-size: 1em; font-weight: bold; color:#FF7F00}
 #sufijo_9{font-family:'arial';  font-size: 1em; font-weight: bold; color:#8D4925}
-#sufijo_10{font-family:'Times New Roman';  font-size: 1em; font-style: italic; color:#5e5e5e}
+#sufijo_10{font-family:'arial';  font-size: 0.9em; font-style: italic; color:#5e5e5e}
 #sufijo_11{font-family:'arial';  font-size: 1em; font-weight: bold; color:#008080}
 
 body{
@@ -72,7 +72,7 @@ color: white;
 
 #selector1 {width:100%}
 
-#selector2 {width:95%}
+#selector2 {width:100%}
 
 
 
@@ -87,7 +87,7 @@ color: white;
     border-left-style:none;
     border-color: #ca984d;
     text-decoration: none;
-    display: flex;
+    /*display: flex;*/
     align-items: center;
     
     
@@ -108,24 +108,41 @@ color: white;
 
 
 
-#selector ol li {
+#selector summary{
     font-size: 0.9em;
-    color:black;
+    color:rgb(168, 34, 34);
     
    
-    display: flex;
+    display: block;
     align-items: center;
-    margin-left: 0px;
+    
+    
   
     
     
 }
 
 
+#texto_1 p{
+   
+
+    
+    display:inline-block;
+    align-items: center;
+    color: #0CB7F2;
+    line-height: 2;
+   
+
+        
+       
+
+
+}
+/*
 
 #selector ol li p {
     
-    display: flex;
+   display: flex;
     align-items: center;
     margin-left: 0px;
     height: 0em;
@@ -133,6 +150,7 @@ color: white;
     
     
 }
+*/
 
 
 #selector1 {
@@ -148,7 +166,29 @@ color: white;
 
     
     display:block;
-    padding: 4px;
+    color: black;
+    font-size: 0.9em;
+    /*padding: 4px;*/
+    border-top-style:dotted;
+    border-width: 1px;
+    border-right-style:none;
+    border-left-style:none;
+    
+    border-color: #279247;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 2em;
+        
+}
+
+
+#parrafos li {
+
+    
+    display:block;
+    /*padding: 4px;*/
     border-top-style:dotted;
     border-width: 1px;
     border-right-style:none;
@@ -160,7 +200,9 @@ color: white;
     display: flex;
     align-items: center;
     
+        
 }
+
 
 #selector3 li a{
 
