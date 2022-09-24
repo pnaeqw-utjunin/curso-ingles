@@ -11,7 +11,7 @@ h1{color:rgb(255, 255, 255);}
 #sufijo_7{font-family:'arial';  font-size: 1em; font-weight: bold; color:#0CB7F2}
 #sufijo_8{font-family:'arial';  font-size: 1em; font-weight: bold; color:#FF7F00}
 #sufijo_9{font-family:'arial';  font-size: 1em; font-weight: bold; color:#8D4925}
-#sufijo_10{font-family:'arial';  font-size: 0.9em; font-style: italic; color:#5e5e5e}
+#sufijo_10{font-family:'arial';  font-size: 0.9em; font-style: italic; color:#969595}
 #sufijo_11{font-family:'arial';  font-size: 1em; font-weight: bold; color:#008080}
 
 body{
@@ -138,6 +138,14 @@ color: white;
 
 
 }
+
+#texto_2{
+
+    color:#008080;
+    font-size: 1em;
+    padding: 5px;
+
+}
 /*
 
 #selector ol li p {
@@ -202,6 +210,7 @@ color: white;
     
         
 }
+
 
 
 #selector3 li a{
