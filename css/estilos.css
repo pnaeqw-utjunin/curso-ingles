@@ -113,8 +113,9 @@ color: white;
     color:rgb(168, 34, 34);
     
    
-    display: block;
+    display: flex;
     align-items: center;
+    height: 1em;
     
     
   
