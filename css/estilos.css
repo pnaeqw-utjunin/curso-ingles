@@ -132,6 +132,7 @@ color: white;
     align-items: center;
     color: #0CB7F2;
     line-height: 2;
+    font-size: 1em;
    
 
         
@@ -197,6 +198,7 @@ color: white;
 
     
     display:block;
+    font-size: 0.9em;
     /*padding: 4px;*/
     border-top-style:dotted;
     border-width: 1px;
