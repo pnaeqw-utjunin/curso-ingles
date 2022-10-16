@@ -3,7 +3,7 @@ h1{color:rgb(255, 255, 255);}
 
 
 #sufijo_1{font-family:'arial';  font-size: 1em; font-weight: bold; color:red}
-#sufijo_2{font-family:'arial';  font-size: 1em; font-style: italic; color:blue}
+#sufijo_2{font-family:'arial';  font-size: 0.9em; font-style: italic; color:blue}
 #sufijo_3{font-family:'arial';  font-size: 1em; font-style: italic; color:rgb(5, 138, 34)}
 #sufijo_4{font-family:'arial';  font-size: 1em; font-weight: bold; color:#FF0080}
 #sufijo_5{font-family:'arial';  font-size: 1em; font-weight: bold; color:#1cbd00}
@@ -13,6 +13,7 @@ h1{color:rgb(255, 255, 255);}
 #sufijo_9{font-family:'arial';  font-size: 1em; font-weight: bold; color:#8D4925}
 #sufijo_10{font-family:'arial';  font-size: 0.9em; font-style: italic; color:#969595}
 #sufijo_11{font-family:'arial';  font-size: 1em; font-weight: bold; color:#008080}
+#sufijo_12{font-family:'arial';  font-size: 0.9em; font-style: italic; color:#0CB7F2}
 
 body{
 
