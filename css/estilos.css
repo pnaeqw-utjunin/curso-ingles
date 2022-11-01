@@ -149,6 +149,9 @@ color: white;
     padding: 5px;
 
 }
+
+
+
 /*
 
 #selector ol li p {
@@ -211,6 +214,7 @@ color: white;
     text-decoration: none;
     display: flex;
     align-items: center;
+    height: auto;
     
         
 }
