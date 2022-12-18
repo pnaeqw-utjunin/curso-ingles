@@ -129,7 +129,7 @@ color: white;
    
 
     
-    display:inline-block;
+    
     align-items: center;
     color: #0CB7F2;
     line-height: 2;
@@ -213,7 +213,7 @@ color: white;
     width: 100%;
     text-decoration: none;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     height: auto;
     
         
@@ -247,3 +247,5 @@ color: white;
    
     
 }
+
+
