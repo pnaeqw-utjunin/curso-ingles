@@ -249,3 +249,58 @@ color: white;
 }
 
 
+/* Estilos específicos para pantallas anchas (desde 900px) */
+@media screen and (min-width: 900px) {
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .navbar a {
+      margin-left: 20px;
+    }
+  }
+  
+  /* Estilos específicos para pantallas medianas (desde 601px hasta 899px) */
+  @media screen and (min-width: 601px) and (max-width: 899px) {
+    .header {
+      font-size: 18px;
+    }
+  
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .navbar a {
+      margin: 10px 0;
+    }
+  }
+  
+  /* Estilos específicos para pantallas pequeñas (hasta 600px) */
+  @media screen and (max-width: 600px) {
+    .header {
+      font-size: 14px;
+    }
+  
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .navbar a {
+      margin: 10px 0;
+    }
+  }
+
+  .contenedor1 {
+    width: 60%; /* O cualquier otro porcentaje que desees */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 20px; /* Espacio interno */
+  }
+  
+  /* Estilos específicos para pantallas pequeñas (hasta 600px) */
+  @media screen and (max-width: 600px) {
+    .contenedor1 {
+      width: 100%; /* Ancho del 100% en pantallas pequeñas */
+    }
+  }
