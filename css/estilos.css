@@ -293,7 +293,7 @@ color: white;
   }
 
   .contenedor1 {
-    width: 60%; /* O cualquier otro porcentaje que desees */
+    width: 50%; /* O cualquier otro porcentaje que desees */
     margin: 0 auto; /* Centra el contenedor */
     padding: 20px; /* Espacio interno */
   }
