@@ -201,14 +201,13 @@ color: white;
 #parrafos li {
 
     
-    display:block;
     font-size: 0.9em;
     /*padding: 4px;*/
     border-top-style:dotted;
     border-width: 1px;
     border-right-style:none;
     border-left-style:none;
-    
+    gap: 8px;
     border-color: #279247;
     width: 100%;
     text-decoration: none;
