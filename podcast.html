@@ -2582,7 +2582,7 @@
                             
                                                                     
                             <ol>
-
+                                <div id="story_1">
                                 <p>
                                         <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/1zZTaB8xGk6HQwB5FMwbbJ?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                                         Orador 1: Hola a todos y bienvenidos al <span id="sufijo_20">"American English File 2 Podcast"</span>.<br> En este episodio hablaremos sobre el tema <span id="sufijo_20">"Right place, wrong person"</span> o "El lugar correcto, la persona equivocada".<br><br>
@@ -2604,7 +2604,7 @@
                                         Orador 1: Ahora escuchemos la historia de Joe, un asistente de vuelo que fue de vacaciones a Tailandia con su novia.<br><br>
                                         
                                         
-                                        <p id="story_1">
+                                        
 
                                         <span id="sufijo_20">Joe, 28, a flight attendant
 
@@ -2620,43 +2620,7 @@
                                         <br><br>you don't know a person until you travel with him or her</span><br><br>
 
 <i>Vocabulary</i>: <strong>anyone</strong> <span id="sufijo_2">/ˈen.i.wʌn/</span> nadie / cualquiera; <strong>argued</strong> <span id="sufijo_2">/ˈɑːɡ.juːd/</span> discutimos; <strong>arrived</strong> <span id="sufijo_2">/əˈraɪvd/</span> llegamos; <strong>began</strong> <span id="sufijo_2">/bɪˈɡæn/</span> comenzó; <strong>being</strong> <span id="sufijo_2">/ˈbiː.ɪŋ/</span> siendo; <strong>break up</strong> <span id="sufijo_2">/ˈbreɪk ʌp/</span> terminar / romper; <strong>flirting</strong> <span id="sufijo_2">/ˈflɜː.tɪŋ/</span> coqueteando; <strong>got</strong> <span id="sufijo_2">/ɡɒt/</span> llegué / obtuve; <strong>knew</strong> <span id="sufijo_2">/njuː/</span> sabía / conocía; <strong>know</strong> <span id="sufijo_2">/nəʊ/</span> conocer / saber; <strong>left</strong> <span id="sufijo_2">/lɛft/</span> dejamos / salimos de; <strong>met</strong> <span id="sufijo_2">/mɛt/</span> conocimos; <strong>said</strong> <span id="sufijo_2">/sɛd/</span> dijo; <strong>saw</strong> <span id="sufijo_2">/sɔː/</span> vi; <strong>spent</strong> <span id="sufijo_2">/spɛnt/</span> pasé; <strong>stayed</strong> <span id="sufijo_2">/steɪd/</span> nos quedamos; <strong>sunbathed</strong> <span id="sufijo_2">/ˈsʌn.beɪðd/</span> tomamos el sol; <strong>thought</strong> <span id="sufijo_2">/θɔːt/</span> pensé; <strong>took</strong> <span id="sufijo_2">/tʊk/</span> tomé; <strong>wanted</strong> <span id="sufijo_2">/ˈwɒn.tɪd/</span> quería; <strong>was</strong> <span id="sufijo_2">/wɒz/</span> fue / era; <strong>went</strong> <span id="sufijo_2">/wɛnt/</span> fui; <strong>went wrong</strong> <span id="sufijo_2">/wɛnt rɒŋ/</span> salió mal;                                        </p>
-<script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const storyElement = document.getElementById('story_1');
-    const storyText = storyElement.innerHTML;
 
-    // Lista de palabras que deben tener audio. Asegúrate de que esta lista
-    // coincide con los archivos de audio en tu carpeta.
-    const highlightedWords = ['anyone', 'argued', 'arrived', 'began', 'being', 'break up', 'flirting', 'got', 'knew', 'know', 'left', 'met', 'said', 'saw', 'spent', 'stayed', 'sunbathed', 'thought', 'took', 'wanted', 'was', 'went', 'went wrong'];
-
-    let newStoryHtml = storyText;
-    highlightedWords.forEach(word => {
-        // La expresión regular ahora busca la palabra sin etiquetas adicionales
-        const regex = new RegExp(`\\b(${word})\\b`, 'gi');
-        // El nombre del archivo ahora se crea directamente de la palabra
-        const audioFileName = `${word.toLowerCase().replace(' ', '-')}.wav`;
-        newStoryHtml = newStoryHtml.replace(regex, `<span class="highlighted" data-audio="${audioFileName}">${word}</span>`);
-    });
-
-    storyElement.innerHTML = newStoryHtml;
-
-    const highlightedSpans = document.querySelectorAll('.highlighted');
-
-    highlightedSpans.forEach(span => {
-        const audioFileName = span.dataset.audio;
-        
-        // Ruta a la carpeta donde tienes los archivos .wav
-        const audioPath = `web-ingles/curso-ingles/descargas/audios/vocabulario/${audioFileName}`;
-        
-        const audio = new Audio(audioPath);
-        
-        span.addEventListener('mouseover', () => {
-            audio.currentTime = 0;
-            audio.play();
-        });
-    });
-});
-    </script>
 
 
                                         Orador 2: Vamos con algunas preguntas para comprobar la comprensión:<br><br>
@@ -2680,7 +2644,7 @@
 
                                         Orador 1: A continuación leeremos la lectura <span id="sufijo_20">"Laura’s Vacation"</span>.<br><br>
 
-                                        <p id="story_2">
+                                        
 
                                         <span id="sufijo_20">Laura, 26, a nurse
 
@@ -2691,45 +2655,8 @@
                                         <br><br>I'd love to go back to Costa Rica one day... but without Linda.</span><br><br>
 
                                         <i>Vocabulary</i>: <strong>although</strong> <span id="sufijo_2">/ɔːlˈðoʊ/</span> aunque; <strong>asked</strong> <span id="sufijo_2">/æskt/</span> preguntó; <strong>ate</strong> <span id="sufijo_2">/eɪt/</span> comió; <strong>booked</strong> <span id="sufijo_2">/bʊkt/</span> reservé; <strong>bought</strong> <span id="sufijo_2">/bɔːt/</span> compró; <strong>cheap</strong> <span id="sufijo_2">/tʃiːp/</span> barato; <strong>complained</strong> <span id="sufijo_2">/kəmˈpleɪnd/</span> se quejó; <strong>could</strong> <span id="sufijo_2">/kʊd/</span> podía; <strong>cruises</strong> <span id="sufijo_2">/kruːzɪz/</span> cruceros; <strong>felt</strong> <span id="sufijo_2">/fɛlt/</span> sentimos; <strong>had</strong> <span id="sufijo_2">/hæd/</span> tenía; <strong>invited</strong> <span id="sufijo_2">/ɪnˈvaɪtɪd/</span> invitó; <strong>paid</strong> <span id="sufijo_2">/peɪd/</span> pagó; <strong>poor</strong> <span id="sufijo_2">/pʊər/</span> pobre; <strong>reason</strong> <span id="sufijo_2">/ˈriːzən/</span> razón; <strong>rented</strong> <span id="sufijo_2">/ˈrɛntɪd/</span> alquilamos; <strong>said</strong> <span id="sufijo_2">/sɛd/</span> dijimos; <strong>sightseeing</strong> <span id="sufijo_2">/ˈsaɪtˌsiːɪŋ/</span> turismo; <strong>want</strong> <span id="sufijo_2">/wɒnt/</span> querer; <strong>wanted</strong> <span id="sufijo_2">/ˈwɒn.tɪd/</span> quería; <strong>was</strong> <span id="sufijo_2">/wɒz/</span> fue / estaba; <strong>weather</strong> <span id="sufijo_2">/ˈwɛðər/</span> clima; <strong>went</strong> <span id="sufijo_2">/wɛnt/</span> fuimos; <strong>worst</strong> <span id="sufijo_2">/wɜːst/</span> peor; <strong>zipline tour</strong> <span id="sufijo_2">/ˈzɪp.laɪn tʊr/</span> tour de tirolesa;
-                                        </p>
+                                        
 
-<script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const storyElement = document.getElementById('story_2');
-    const storyText = storyElement.innerHTML;
-
-    // Lista de palabras que deben tener audio. Asegúrate de que esta lista
-    // coincide con los archivos de audio en tu carpeta.
-    const highlightedWords = ['although', 'asked', 'ate', 'booked', 'bought', 'cheap', 'complained', 'could', 'cruises', 'felt', 'had', 'invited', 'paid', 'poor', 'reason', 'rented', 'said', 'sightseeing', 'want', 'wanted', 'was', 'weather', 'went', 'worst', 'zipline tour'];
-
-    let newStoryHtml = storyText;
-    highlightedWords.forEach(word => {
-        // La expresión regular ahora busca la palabra sin etiquetas adicionales
-        const regex = new RegExp(`\\b(${word})\\b`, 'gi');
-        // El nombre del archivo ahora se crea directamente de la palabra
-        const audioFileName = `${word.toLowerCase().replace(' ', '-')}.wav`;
-        newStoryHtml = newStoryHtml.replace(regex, `<span class="highlighted" data-audio="${audioFileName}">${word}</span>`);
-    });
-
-    storyElement.innerHTML = newStoryHtml;
-
-    const highlightedSpans = document.querySelectorAll('.highlighted');
-
-    highlightedSpans.forEach(span => {
-        const audioFileName = span.dataset.audio;
-        
-        // Ruta a la carpeta donde tienes los archivos .wav
-        const audioPath = `web-ingles/curso-ingles/descargas/audios/vocabulario/${audioFileName}`;
-        
-        const audio = new Audio(audioPath);
-        
-        span.addEventListener('mouseover', () => {
-            audio.currentTime = 0;
-            audio.play();
-        });
-    });
-});
-    </script>
 
 
                                         Orador 2: Respondamos algunas preguntas sobre su experiencia:<br><br>
@@ -2778,69 +2705,51 @@
 
                                         Orador 2: ¡Nos vemos en el próximo episodio!<br><br>
                                             
-                                            <style>
-ul.vocabulario {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-ul.vocabulario li {
-  display: flex;
-  align-items: center;
-  gap: 6px;          /* Espacio horizontal entre elementos */
-  margin: 0 !important;
-  padding: 0 !important;
-  line-height: 1 !important;
-  height: 24px;      /* Fuerza altura reducida */
-}
-ul.vocabulario li img {
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-}
-.palabra {
-  font-weight: bold;
-}
-.fonetica {
-  color: blue;
-}
-.traduccion {
-  color: green;
-}
-</style>
-
-                                        Vocabulario:<br><br>
-                                        <ul class="vocabulario">
-                                        <li><audio id="wrong" src="descargas/audios/vocabulario/wrong.wav"></audio><span onclick="document.getElementById('wrong').play()" title="wrong"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>wrong</b> &nbsp; <span id="sufijo_2">/rɔːŋ/</span> &nbsp; - &nbsp; <span id="sufijo_3">incorrecto, equivocado </span> </p></li>
-                                        <li><audio id="would" src="descargas/audios/vocabulario/would.wav"></audio><span onclick="document.getElementById('would').play()" title="would"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>would</b> &nbsp; <span id="sufijo_2">/wʊd/</span> &nbsp; - &nbsp; <span id="sufijo_3">(modal) indicaría, haría </span> </p></li>
-                                        <li><audio id="abroad" src="descargas/audios/vocabulario/abroad.wav"></audio><span onclick="document.getElementById('abroad').play()" title="abroad"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>abroad</b> &nbsp; <span id="sufijo_2">/əˈbrɔːd/</span> &nbsp; - &nbsp; <span id="sufijo_3">en el extranjero </span> </p></li>
-                                        <li><audio id="began" src="descargas/audios/vocabulario/began.wav"></audio><span onclick="document.getElementById('began').play()" title="began"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>began</b> &nbsp; <span id="sufijo_2">/bɪˈɡæn/</span> &nbsp; - &nbsp; <span id="sufijo_3">comenzó </span> </p></li>
-                                        <li><audio id="spent" src="descargas/audios/vocabulario/spent.wav"></audio><span onclick="document.getElementById('spent').play()" title="spent"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>spent</b> &nbsp; <span id="sufijo_2">/spɛnt/</span> &nbsp; - &nbsp; <span id="sufijo_3">gastó, pasó (tiempo) </span> </p></li>
-                                        <li><audio id="saw" src="descargas/audios/vocabulario/saw.wav"></audio><span onclick="document.getElementById('saw').play()" title="saw"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>saw</b> &nbsp; <span id="sufijo_2">/sɔː/</span> &nbsp; - &nbsp; <span id="sufijo_3">vio </span> </p></li>
-                                        <li><audio id="left" src="descargas/audios/vocabulario/left.wav"></audio><span onclick="document.getElementById('left').play()" title="left"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>left</b> &nbsp; <span id="sufijo_2">/lɛft/</span> &nbsp; - &nbsp; <span id="sufijo_3">dejó, se fue </span> </p></li>
-                                        <li><audio id="wanted" src="descargas/audios/vocabulario/wanted.wav"></audio><span onclick="document.getElementById('wanted').play()" title="wanted"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>wanted</b> &nbsp; <span id="sufijo_2">/ˈwɒntɪd/</span> &nbsp; - &nbsp; <span id="sufijo_3">quiso </span> </p></li>
-                                        <li><audio id="said" src="descargas/audios/vocabulario/said.wav"></audio><span onclick="document.getElementById('said').play()" title="said"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>said</b> &nbsp; <span id="sufijo_2">/sɛd/</span> &nbsp; - &nbsp; <span id="sufijo_3">dijo </span> </p></li>
-                                        <li><audio id="thought" src="descargas/audios/vocabulario/thought.wav"></audio><span onclick="document.getElementById('thought').play()" title="thought"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>thought</b> &nbsp; <span id="sufijo_2">/θɔːt/</span> &nbsp; - &nbsp; <span id="sufijo_3">pensó </span> </p></li>
-                                        <li><audio id="awful" src="descargas/audios/vocabulario/awful.wav"></audio><span onclick="document.getElementById('awful').play()" title="awful"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>awful</b> &nbsp; <span id="sufijo_2">/ˈɔːfəl/</span> &nbsp; - &nbsp; <span id="sufijo_3">horrible </span> </p></li>
-                                        <li><audio id="argued" src="descargas/audios/vocabulario/argued.wav"></audio><span onclick="document.getElementById('argued').play()" title="argued"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>argued</b> &nbsp; <span id="sufijo_2">/ˈɑːɡjuːd/</span> &nbsp; - &nbsp; <span id="sufijo_3">discutió </span> </p></li>
-                                        <li><audio id="weather" src="descargas/audios/vocabulario/weather.wav"></audio><span onclick="document.getElementById('weather').play()" title="weather"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>weather</b> &nbsp; <span id="sufijo_2">/ˈwɛðər/</span> &nbsp; - &nbsp; <span id="sufijo_3">clima </span> </p></li>
-                                        <li><audio id="sunbathed" src="descargas/audios/vocabulario/sunbathed.wav"></audio><span onclick="document.getElementById('sunbathed').play()" title="sunbathed"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>sunbathed</b> &nbsp; <span id="sufijo_2">/ˈsʌnˌbeɪðd/</span> &nbsp; - &nbsp; <span id="sufijo_3">tomó el sol </span> </p></li>
-                                        <li><audio id="flirting" src="descargas/audios/vocabulario/flirting.wav"></audio><span onclick="document.getElementById('flirting').play()" title="flirting"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>flirting</b> &nbsp; <span id="sufijo_2">/ˈflɜːrtɪŋ/</span> &nbsp; - &nbsp; <span id="sufijo_3">coqueteando </span> </p></li>
-                                        <li><audio id="break up" src="descargas/audios/vocabulario/break up.wav"></audio><span onclick="document.getElementById('break up').play()" title="break up"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>break up</b> &nbsp; <span id="sufijo_2">/breɪk ʌp/</span> &nbsp; - &nbsp; <span id="sufijo_3">terminar una relación </span> </p></li>
-                                        <li><audio id="hundreds" src="descargas/audios/vocabulario/hundreds.wav"></audio><span onclick="document.getElementById('hundreds').play()" title="hundreds"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>hundreds</b> &nbsp; <span id="sufijo_2">/ˈhʌndrədz/</span> &nbsp; - &nbsp; <span id="sufijo_3">cientos </span> </p></li>
-                                        <li><audio id="anyone" src="descargas/audios/vocabulario/anyone.wav"></audio><span onclick="document.getElementById('anyone').play()" title="anyone"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>anyone</b> &nbsp; <span id="sufijo_2">/ˈɛniwʌn/</span> &nbsp; - &nbsp; <span id="sufijo_3">cualquiera </span> </p></li>
-                                        <li><audio id="felt" src="descargas/audios/vocabulario/felt.wav"></audio><span onclick="document.getElementById('felt').play()" title="felt"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>felt</b> &nbsp; <span id="sufijo_2">/fɛlt/</span> &nbsp; - &nbsp; <span id="sufijo_3">sintió </span> </p></li>
-                                        <li><audio id="cheap" src="descargas/audios/vocabulario/cheap.wav"></audio><span onclick="document.getElementById('cheap').play()" title="cheap"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>cheap</b> &nbsp; <span id="sufijo_2">/tʃiːp/</span> &nbsp; - &nbsp; <span id="sufijo_3">barato, tacaño </span> </p></li>
-                                        <li><audio id="sightseeing" src="descargas/audios/vocabulario/sightseeing.wav"></audio><span onclick="document.getElementById('sightseeing').play()" title="sightseeing"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>sightseeing</b> &nbsp; <span id="sufijo_2">/ˈsaɪtˌsiːɪŋ/</span> &nbsp; - &nbsp; <span id="sufijo_3">turismo, visitar lugares </span> </p></li>
-                                        <li><audio id="cruises" src="descargas/audios/vocabulario/cruises.wav"></audio><span onclick="document.getElementById('cruises').play()" title="cruises"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>cruises</b> &nbsp; <span id="sufijo_2">/ˈkruːzɪz/</span> &nbsp; - &nbsp; <span id="sufijo_3">cruceros </span> </p></li>
-                                        <li><audio id="bought" src="descargas/audios/vocabulario/bought.wav"></audio><span onclick="document.getElementById('bought').play()" title="bought"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>bought</b> &nbsp; <span id="sufijo_2">/bɔːt/</span> &nbsp; - &nbsp; <span id="sufijo_3">compró </span> </p></li>
-                                        <li><audio id="worst" src="descargas/audios/vocabulario/worst.wav"></audio><span onclick="document.getElementById('worst').play()" title="worst"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>worst</b> &nbsp; <span id="sufijo_2">/wɜːrst/</span> &nbsp; - &nbsp; <span id="sufijo_3">peor </span> </p></li>
-                                        <li><audio id="although" src="descargas/audios/vocabulario/although.wav"></audio><span onclick="document.getElementById('although').play()" title="although"><img draggable="false" role="img" class="emoji" height="20" src="https://s.w.org/images/core/emoji/13.1.0/svg/25b6.svg"></span> &nbsp;<p><b>although</b> &nbsp; <span id="sufijo_2">/ɔːlˈðoʊ/</span> &nbsp; - &nbsp; <span id="sufijo_3">aunque </span> </p></li>
-                                        </ul>
+                                            
    
                                 </p>
     
-                                
+                                </div>
+
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', () => {
+                                const storyElement = document.getElementById('story_1');
+                                const storyText = storyElement.innerHTML;
+
+                                // Lista de palabras que deben tener audio. Asegúrate de que esta lista
+                                // coincide con los archivos de audio en tu carpeta.
+                                const highlightedWords = ['anyone', 'argued', 'arrived', 'asked', 'ate', 'began', 'being', 'booked', 'bought', 'break up', 'cheap', 'complained', 'could', 'cruises', 'felt', 'flirting', 'got', 'had', 'invited', 'knew', 'know', 'left', 'met', 'paid', 'poor', 'reason', 'rented', 'said', 'saw', 'sightseeing', 'spent', 'stayed', 'sunbathed', 'thought', 'took', 'want', 'wanted', 'was', 'weather', 'went', 'went wrong', 'worst', 'zipline tour', 'although'
+
+];
+
+                                let newStoryHtml = storyText;
+                                highlightedWords.forEach(word => {
+                                    // La expresión regular ahora busca la palabra sin etiquetas adicionales
+                                    const regex = new RegExp(`\\b(${word})\\b`, 'gi');
+                                    // El nombre del archivo ahora se crea directamente de la palabra
+                                    const audioFileName = `${word.toLowerCase().replace(' ', '-')}.wav`;
+                                    newStoryHtml = newStoryHtml.replace(regex, `<span class="highlighted" data-audio="${audioFileName}">${word}</span>`);
+                                });
+
+                                storyElement.innerHTML = newStoryHtml;
+
+                                const highlightedSpans = document.querySelectorAll('.highlighted');
+
+                                highlightedSpans.forEach(span => {
+                                    const audioFileName = span.dataset.audio;
+                                    
+                                    // Ruta a la carpeta donde tienes los archivos .wav
+                                    const audioPath = `web-ingles/curso-ingles/descargas/audios/vocabulario/${audioFileName}`;
+                                    
+                                    const audio = new Audio(audioPath);
+                                    
+                                    span.addEventListener('mouseover', () => {
+                                        audio.currentTime = 0;
+                                        audio.play();
+                                    });
+                                });
+                            });
+                                </script>
 
                             </ol>
 
@@ -2851,6 +2760,7 @@ ul.vocabulario li img {
                             
                                                                     
                             <ol>
+                            <div id="story_3">
 
                                 <p>
                                         <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/0SDHrgaYBhrCpf92rt12MA?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -2863,6 +2773,9 @@ ul.vocabulario li img {
                                         Orador 1: A continuación leeremos la lectura <span id="sufijo_20">"A moment in history"</span>.<br><br>
 
                                         <span id="sufijo_20">"On November 4th, I arrived in Chicago late in the evening. I wanted to photograph Barack Obama and his family in the convention center, but when I got there I discovered that I didn’t have my press pass and I couldn’t go inside. I walked around the park outside the center. Although it was November, it was a warm night. The atmosphere was wonderful. When I took this photo, everybody was looking at the TV screens waiting for the election results. Some people were quietly holding hands and smiling – others were tense and nervous. They felt that it was their moment. Suddenly, I realized that this was a better place to be than inside. I was watching Obama’s victory through the faces of all these people, African, Hispanic, Chinese, white. At about 11 o’clock the results were announced, and everybody went crazy. People started laughing, shouting, and crying. But when Obama made his speech they all became quiet and emotional. There was only one place to be on the planet that night – and I was there."</span><br><br>
+
+                                        
+
 
                                         Orador 2: Respondamos algunas preguntas sobre la lectura:<br><br>
 
@@ -2929,11 +2842,51 @@ ul.vocabulario li img {
 
                                         Orador 1: Gracias por acompañarnos en <span id="sufijo_20">"American English File 2 Podcast"</span>.<br> ¡Nos vemos en el próximo episodio!<br><br>
 
+                                        <i>Vocabulary</i>: <strong>although</strong> <span id="sufijo_2">/ɔːlˈðoʊ/</span> aunque; <strong>announced</strong> <span id="sufijo_2">/əˈnaʊnst/</span> anunciado; <strong>arrived</strong> <span id="sufijo_2">/əˈraɪvd/</span> llegué; <strong>atmosphere</strong> <span id="sufijo_2">/ˈætməsfɪər/</span> atmósfera / ambiente; <strong>born</strong> <span id="sufijo_2">/bɔːn/</span> nació; <strong>couldn’t</strong> <span id="sufijo_2">/ˈkʊd(ə)nt/</span> no podía; <strong>crying</strong> <span id="sufijo_2">/ˈkraɪɪŋ/</span> llorando; <strong>discovered</strong> <span id="sufijo_2">/dɪˈskʌvərd/</span> descubrí; <strong>emotional</strong> <span id="sufijo_2">/ɪˈməʊʃənl/</span> emocionado; <strong>everybody</strong> <span id="sufijo_2">/ˈevribɒdi/</span> todos; <strong>expensive</strong> <span id="sufijo_2">/ɪkˈspensɪv/</span> caro; <strong>fame</strong> <span id="sufijo_2">/feɪm/</span> fama; <strong>granddaughter</strong> <span id="sufijo_2">/ˈɡrændˌdɔːtə/</span> nieta; <strong>heritage</strong> <span id="sufijo_2">/ˈherɪtɪdʒ/</span> herencia; <strong>holding hands</strong> <span id="sufijo_2">/ˈhəʊldɪŋ hændz/</span> tomados de las manos; <strong>laughing</strong> <span id="sufijo_2">/ˈlæfɪŋ/</span> riendo; <strong>leave</strong> <span id="sufijo_2">/liːv/</span> dejar / legar; <strong>lost</strong> <span id="sufijo_2">/lɒst/</span> perdió; <strong>marry</strong> <span id="sufijo_2">/ˈmæri/</span> casarse; <strong>nervous</strong> <span id="sufijo_2">/ˈnɜːvəs/</span> nervioso; <strong>participated</strong> <span id="sufijo_2">/pɑːˈtɪsɪpeɪtɪd/</span> participó; <strong>photograph</strong> <span id="sufijo_2">/ˈfəʊtəɡrɑːf/</span> fotografiar; <strong>planet</strong> <span id="sufijo_2">/ˈplænɪt/</span> planeta; <strong>pretty</strong> <span id="sufijo_2">/ˈprɪti/</span> bonita; <strong>property</strong> <span id="sufijo_2">/ˈprɒpəti/</span> propiedad; <strong>protest</strong> <span id="sufijo_2">/ˈprəʊtest/</span> protesta; <strong>punished</strong> <span id="sufijo_2">/ˈpʌnɪʃt/</span> castigó; <strong>realized</strong> <span id="sufijo_2">/ˈriːəlaɪzd/</span> me di cuenta; <strong>rebel</strong> <span id="sufijo_2">/ˈrebəl/</span> rebelde; <strong>returned</strong> <span id="sufijo_2">/rɪˈtɜːnd/</span> regresé; <strong>royal</strong> <span id="sufijo_2">/ˈrɔɪəl/</span> real / de la realeza; <strong>shouting</strong> <span id="sufijo_2">/ˈʃaʊtɪŋ/</span> gritando; <strong>sitting</strong> <span id="sufijo_2">/ˈsɪtɪŋ/</span> sentado; <strong>smiling</strong> <span id="sufijo_2">/ˈsmaɪlɪŋ/</span> sonriendo; <strong>speech</strong> <span id="sufijo_2">/spiːtʃ/</span> discurso; <strong>sunset</strong> <span id="sufijo_2">/ˈsʌnset/</span> atardecer; <strong>tense</strong> <span id="sufijo_2">/tens/</span> tenso; <strong>victory</strong> <span id="sufijo_2">/ˈvɪktəri/</span> victoria; <strong>walked</strong> <span id="sufijo_2">/wɔːkt/</span> caminé; <strong>wanted</strong> <span id="sufijo_2">/ˈwɒn.tɪd/</span> quería; <strong>warm</strong> <span id="sufijo_2">/wɔːm/</span> cálido; <strong>was</strong> <span id="sufijo_2">/wɒz/</span> fue / estaba; <strong>watching</strong> <span id="sufijo_2">/ˈwɒtʃɪŋ/</span> viendo; <strong>were</strong> <span id="sufijo_2">/wɜːr/</span> eran / estaban; <strong>worked</strong> <span id="sufijo_2">/wɜːkt/</span> trabajé;
  
    
                                 </p>
-    
-                                
+                            </div>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', () => {
+                                    const storyElement = document.getElementById('story_3');
+                                    const storyText = storyElement.innerHTML;
+
+                                    // Lista de palabras que tienen un archivo de audio asociado
+                                    const highlightedWords = ['although', 'announced', 'arrived', 'atmosphere', 'born', 'couldn’t', 'crying', 'discovered', 'emotional', 'everybody', 'expensive', 'fame', 'granddaughter', 'heritage', 'holding hands', 'laughing', 'leave', 'lost', 'marry', 'nervous', 'participated', 'photograph', 'planet', 'pretty', 'property', 'protest', 'punished', 'realized', 'rebel', 'returned', 'royal', 'shouting', 'sitting', 'smiling', 'speech', 'sunset', 'tense', 'victory', 'walked', 'wanted', 'warm', 'was', 'watching', 'were', 'worked'];
+
+                                    let newStoryHtml = storyText;
+                                    highlightedWords.forEach(word => {
+                                        // Envuelve cada palabra en un <span> y le añade un atributo 'data-audio'
+                                        // para indicar el nombre del archivo de audio.
+                                        const regex = new RegExp(`\\b(${word})\\b`, 'gi');
+                                        const audioFileName = `${word.toLowerCase()}.wav`; // 'Could' -> 'could.mp3'
+                                        newStoryHtml = newStoryHtml.replace(regex, `<span class="highlighted" data-audio="${audioFileName}">${word}</span>`);
+                                    });
+
+                                    storyElement.innerHTML = newStoryHtml;
+
+                                    const highlightedSpans = document.querySelectorAll('.highlighted');
+
+                                    // Itera sobre cada <span> resaltado
+                                    highlightedSpans.forEach(span => {
+                                        const audioFileName = span.dataset.audio; // Obtiene el nombre del archivo del atributo 'data-audio'
+                                        const audioPath = `descargas/audios/vocabulario/${audioFileName}`;
+                                        
+                                        // Crea un objeto de audio para cada palabra y lo precarga.
+                                        // Esto mejora el rendimiento, ya que el audio estará listo para reproducirse.
+                                        const audio = new Audio(audioPath);
+                                        
+                                        // Añade un evento 'mouseover' (al pasar el mouse)
+                                        span.addEventListener('mouseover', () => {
+                                            audio.currentTime = 0; // Reinicia el audio para que se reproduzca desde el principio
+                                            audio.play();
+                                        });
+                                    });
+                                });
+                            </script>
+
+
                             </ol>
 
                                 
@@ -2943,7 +2896,7 @@ ul.vocabulario li img {
                             
                                                                     
                             <ol>
-
+                                <div id="story">
                                 <p>
                                         <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/40jbmIkGy7Neb1LKiZug4t?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                                         Orador 1: Hola a todos y bienvenidos al podcast <span id="sufijo_20">"American English File 2 Podcast"</span>.<br> Hoy exploraremos una historia emocionante titulada <span id="sufijo_20">"One dark October evening"</span> o "Una oscura noche de octubre".<br><br>
@@ -2965,7 +2918,7 @@ ul.vocabulario li img {
                                         Orador 1: A continuación leeremos la lectura <span id="sufijo_20">"One dark October evening"</span>.<br><br>
                                         
                                         
-                                        <p id="story">
+                                        
                                         <span id="sufijo_20">Hannah met Jamie in the summer of 2010. It was Hannah's 21st birthday, and she and her friends went to a club. They wanted to dance, but they didn't like the music, so Hannah went to speak to the DJ. "This music is awful," she said. "Could you play something else?" The DJ looked at her and said, "Don't worry, I have the perfect song for you."
 
                                         <br><br>Two minutes later, he said, "The next song is by Scouting For Girls. It's called Blue As Your Eyes, and it's for a beautiful girl who's dancing over there." Hannah knew that the song was for her. When Hannah and her friends left the club, the DJ was waiting for her at the door. "Hi, I'm Jamie," he said to Hannah. "Can I see you again?" So Hannah gave him her phone number.
@@ -3002,46 +2955,9 @@ Vocabulario: <strong>21st</strong> <span id="sufijo_2">/ˈtwɛnti fɜːrst/</spa
 <strong>took</strong> <span id="sufijo_2">/tʊk/</span> tomó, llevó;
 <strong>wanted</strong> <span id="sufijo_2">/ˈwɒntɪd/</span> quería, deseaba;
 <strong>wearing</strong> <span id="sufijo_2">/ˈwɛərɪŋ/</span> llevando puesto;
-<strong>went</strong> <span id="sufijo_2">/wɛnt/</span> fue.                                        <br><br></p>
+<strong>went</strong> <span id="sufijo_2">/wɛnt/</span> fue.                                        <br><br>
 
-                                        <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const storyElement = document.getElementById('story');
-            const storyText = storyElement.innerHTML;
-
-            // Lista de palabras que tienen un archivo de audio asociado
-            const highlightedWords = ['met', '21st', 'went', 'wanted', 'awful', 'Could', 'something else', 'said', 'called', 'knew', 'left', 'gave', 'invited', 'dinner', 'took', 'Although', 'saw', 'Bridge', 'finished', 'madly', 'raining', 'looked', 'ran', 'driving', 'hurry', 'across', 'wearing', 'coat'];
-
-            let newStoryHtml = storyText;
-            highlightedWords.forEach(word => {
-                // Envuelve cada palabra en un <span> y le añade un atributo 'data-audio'
-                // para indicar el nombre del archivo de audio.
-                const regex = new RegExp(`\\b(${word})\\b`, 'gi');
-                const audioFileName = `${word.toLowerCase()}.wav`; // 'Could' -> 'could.mp3'
-                newStoryHtml = newStoryHtml.replace(regex, `<span class="highlighted" data-audio="${audioFileName}">${word}</span>`);
-            });
-
-            storyElement.innerHTML = newStoryHtml;
-
-            const highlightedSpans = document.querySelectorAll('.highlighted');
-
-            // Itera sobre cada <span> resaltado
-            highlightedSpans.forEach(span => {
-                const audioFileName = span.dataset.audio; // Obtiene el nombre del archivo del atributo 'data-audio'
-                const audioPath = `descargas/audios/vocabulario/${audioFileName}`;
-                
-                // Crea un objeto de audio para cada palabra y lo precarga.
-                // Esto mejora el rendimiento, ya que el audio estará listo para reproducirse.
-                const audio = new Audio(audioPath);
-                
-                // Añade un evento 'mouseover' (al pasar el mouse)
-                span.addEventListener('mouseover', () => {
-                    audio.currentTime = 0; // Reinicia el audio para que se reproduzca desde el principio
-                    audio.play();
-                });
-            });
-        });
-    </script>
+                                        
 
 
                                         Orador 2: Muy bien.<br> Ahora que escuchamos la historia, vamos a responder algunas preguntas para comprobar la comprensión.<br><br>
@@ -3113,19 +3029,60 @@ Vocabulario: <strong>21st</strong> <span id="sufijo_2">/ˈtwɛnti fɜːrst/</spa
  
    
                                 </p>
-    
+                                </div>
+                                                               
+                                <script>
+                                document.addEventListener('DOMContentLoaded', () => {
+                                    const storyElement = document.getElementById('story');
+                                    const storyText = storyElement.innerHTML;
+
+                                    // Lista de palabras que tienen un archivo de audio asociado
+                                    const highlightedWords = ['met', '21st', 'went', 'wanted', 'awful', 'Could', 'something else', 'said', 'called', 'knew', 'left', 'gave', 'invited', 'dinner', 'took', 'Although', 'saw', 'Bridge', 'finished', 'madly', 'raining', 'looked', 'ran', 'driving', 'hurry', 'across', 'wearing', 'coat'];
+
+                                    let newStoryHtml = storyText;
+                                    highlightedWords.forEach(word => {
+                                        // Envuelve cada palabra en un <span> y le añade un atributo 'data-audio'
+                                        // para indicar el nombre del archivo de audio.
+                                        const regex = new RegExp(`\\b(${word})\\b`, 'gi');
+                                        const audioFileName = `${word.toLowerCase()}.wav`; // 'Could' -> 'could.mp3'
+                                        newStoryHtml = newStoryHtml.replace(regex, `<span class="highlighted" data-audio="${audioFileName}">${word}</span>`);
+                                    });
+
+                                    storyElement.innerHTML = newStoryHtml;
+
+                                    const highlightedSpans = document.querySelectorAll('.highlighted');
+
+                                    // Itera sobre cada <span> resaltado
+                                    highlightedSpans.forEach(span => {
+                                        const audioFileName = span.dataset.audio; // Obtiene el nombre del archivo del atributo 'data-audio'
+                                        const audioPath = `descargas/audios/vocabulario/${audioFileName}`;
+                                        
+                                        // Crea un objeto de audio para cada palabra y lo precarga.
+                                        // Esto mejora el rendimiento, ya que el audio estará listo para reproducirse.
+                                        const audio = new Audio(audioPath);
+                                        
+                                        // Añade un evento 'mouseover' (al pasar el mouse)
+                                        span.addEventListener('mouseover', () => {
+                                            audio.currentTime = 0; // Reinicia el audio para que se reproduzca desde el principio
+                                            audio.play();
+                                        });
+                                    });
+                                });
+                            </script>
                                 
                             </ol>
 
                                 
                         </details>
 
-                        <details><summary>3A Plans and dreams</summary>
-                            
+                        <details><summary>3A Plans and dreams</summary>                            
                                                                     
                             <ol>
+                            
+                                <div id="story_4">
 
                                 <p>
+                                        
                                         <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/39pRR9pN087l6sVYDucLti?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                                         Orador 1: Hola y bienvenidos a un nuevo episodio de "<span id="sufijo_20">American English File 2 Podcast</span>". Hoy hablaremos de "<span id="sufijo_20">Plans and dreams</span>" o "Planes y sueños".<br><br>
                                         Orador 2: Así es. Exploraremos vocabulario relacionado con los aeropuertos, usaremos la estructura "<span id="sufijo_20">be going to</span>" para hablar de planes y predicciones, y también escucharemos a algunas personas hablar sobre sus sueños de viaje.<br><br>
@@ -3224,22 +3181,61 @@ Vocabulario: <strong>21st</strong> <span id="sufijo_2">/ˈtwɛnti fɜːrst/</spa
                                         Orador 1: Gracias por acompañarnos en este episodio de "<span id="sufijo_20">American English File 2 Podcast</span>". Esperamos que hayan aprendido mucho sobre planes, sueños y aeropuertos.<br><br>
                                         Orador 2: Hasta la próxima. ¡Buen viaje!<br><br>
 
- 
-   
+                                        
+                                        <i>Vocabulary</i>: <strong>airport</strong> <span id="sufijo_2">/ˈerpɔːrt/</span> aeropuerto; <strong>amazing</strong> <span id="sufijo_2">/əˈmeɪzɪŋ/</span> asombroso; <strong>Arrivals</strong> <span id="sufijo_2">/əˈraɪvəlz/</span> llegadas; <strong>Baggage claim</strong> <span id="sufijo_2">/ˈbæɡɪdʒ kleɪm/</span> reclamo de equipaje; <strong>bored</strong> <span id="sufijo_2">/bɔːrd/</span> aburrido; <strong>boyfriend</strong> <span id="sufijo_2">/ˈbɔɪfrend/</span> novio; <strong>Check-in</strong> <span id="sufijo_2">/ˈtʃek ɪn/</span> registro; <strong>coffee</strong> <span id="sufijo_2">/ˈkɒfi/</span> café; <strong>conference</strong> <span id="sufijo_2">/ˈkɒnfrəns/</span> conferencia; <strong>degrees Fahrenheit</strong> <span id="sufijo_2">/dɪˈɡriːz ˈfærənhaɪt/</span> grados Fahrenheit; <strong>Departures</strong> <span id="sufijo_2">/dɪˈpɑːrtʃərz/</span> salidas; <strong>direct</strong> <span id="sufijo_2">/dəˈrekt/</span> directo; <strong>drop-off</strong> <span id="sufijo_2">/ˈdrɒp ɒf/</span> entrega; <strong>excited</strong> <span id="sufijo_2">/ɪkˈsaɪtɪd/</span> emocionado; <strong>facilities</strong> <span id="sufijo_2">/fəˈsɪlɪtiz/</span> instalaciones; <strong>garden</strong> <span id="sufijo_2">/ˈɡɑːrdən/</span> jardín; <strong>Gates</strong> <span id="sufijo_2">/ɡeɪts/</span> puertas de embarque; <strong>golf course</strong> <span id="sufijo_2">/ɡɒlf kɔːrs/</span> campo de golf; <strong>language course</strong> <span id="sufijo_2">/ˈlæŋɡwɪdʒ kɔːrs/</span> curso de idiomas; <strong>laundry</strong> <span id="sufijo_2">/ˈlɔːndri/</span> lavandería; <strong>magazine</strong> <span id="sufijo_2">/ˌmæɡəˈziːn/</span> revista; <strong>magazines</strong> <span id="sufijo_2">/ˌmæɡəˈziːnz/</span> revistas; <strong>massage</strong> <span id="sufijo_2">/məˈsɑːʒ/</span> masaje; <strong>model</strong> <span id="sufijo_2">/ˈmɒdl/</span> modelo; <strong>movie theater</strong> <span id="sufijo_2">/ˈmuːvi ˌθiːətər/</span> cine; <strong>navigate</strong> <span id="sufijo_2">/ˈnævɪɡeɪt/</span> navegar; <strong>nervous</strong> <span id="sufijo_2">/ˈnɜːrvəs/</span> nervioso; <strong>nightmare</strong> <span id="sufijo_2">/ˈnaɪtmer/</span> pesadilla; <strong>paradise</strong> <span id="sufijo_2">/ˈpærədaɪs/</span> paraíso; <strong>Passport control</strong> <span id="sufijo_2">/ˈpæspɔːrt kənˈtroʊl/</span> control de pasaportes; <strong>photo shoot</strong> <span id="sufijo_2">/ˈfoʊtoʊ ʃuːt/</span> sesión de fotos; <strong>plans</strong> <span id="sufijo_2">/plænz/</span> planes; <strong>predictions</strong> <span id="sufijo_2">/prɪˈdɪkʃənz/</span> predicciones; <strong>season</strong> <span id="sufijo_2">/ˈsiːzn/</span> temporada; <strong>security</strong> <span id="sufijo_2">/sɪˈkjʊrəti/</span> seguridad; <strong>sight-seeing tour</strong> <span id="sufijo_2">/ˈsaɪtˌsiːɪŋ tʊr/</span> tour de turismo; <strong>stores</strong> <span id="sufijo_2">/stɔːrz/</span> tiendas; <strong>swimming pool</strong> <span id="sufijo_2">/ˈswɪmɪŋ puːl/</span> piscina; <strong>teach</strong> <span id="sufijo_2">/tiːtʃ/</span> enseñar; <strong>travelers</strong> <span id="sufijo_2">/ˈtrævələrz/</span> viajeros; <strong>volunteer work</strong> <span id="sufijo_2">/ˌvɒlənˈtɪər wɜːrk/</span> trabajo voluntario; <strong>watching</strong> <span id="sufijo_2">/ˈwɒtʃɪŋ/</span> viendo; <strong>were</strong> <span id="sufijo_2">/wɜːr/</span> eran / estaban; <strong>winter</strong> <span id="sufijo_2">/ˈwɪntər/</span> invierno; <strong>worked</strong> <span id="sufijo_2">/wɜːkt/</span> trabajé;
+                                     
+                                    
+
+                                    
+                                    
                                 </p>
-    
-                                
+                            
+                                </div>
+                            
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', () => {
+                                        const storyElement = document.getElementById('story_4');
+                                        const storyText = storyElement.innerHTML;
+
+                                        // Lista de palabras que tienen un archivo de audio asociado
+                                        const highlightedWords = ['airport', 'amazing', 'Arrivals', 'Baggage claim', 'bored', 'boyfriend', 'Check-in', 'coffee', 'conference', 'degrees Fahrenheit', 'Departures', 'direct', 'drop-off', 'excited', 'facilities', 'garden', 'Gates', 'golf course', 'language course', 'laundry', 'magazine', 'magazines', 'massage', 'model', 'movie theater', 'navigate', 'nervous', 'nightmare', 'paradise', 'Passport control', 'photo shoot', 'plans', 'predictions', 'season', 'security', 'sight-seeing tour', 'stores', 'swimming pool', 'teach', 'travelers', 'volunteer work', 'watching', 'were', 'winter', 'worked'];
+
+                                        let newStoryHtml = storyText;
+                                        highlightedWords.forEach(word => {
+                                            // Envuelve cada palabra en un <span> y le añade un atributo 'data-audio'
+                                            // para indicar el nombre del archivo de audio.
+                                            const regex = new RegExp(`\\b(${word})\\b`, 'gi');
+                                            const audioFileName = `${word.toLowerCase()}.wav`; // 'Could' -> 'could.mp3'
+                                            newStoryHtml = newStoryHtml.replace(regex, `<span class="highlighted" data-audio="${audioFileName}">${word}</span>`);
+                                        });
+
+                                        storyElement.innerHTML = newStoryHtml;
+
+                                        const highlightedSpans = document.querySelectorAll('.highlighted');
+
+                                        // Itera sobre cada <span> resaltado
+                                        highlightedSpans.forEach(span => {
+                                            const audioFileName = span.dataset.audio; // Obtiene el nombre del archivo del atributo 'data-audio'
+                                            const audioPath = `descargas/audios/vocabulario/${audioFileName}`;
+                                            
+                                            // Crea un objeto de audio para cada palabra y lo precarga.
+                                            // Esto mejora el rendimiento, ya que el audio estará listo para reproducirse.
+                                            const audio = new Audio(audioPath);
+                                            
+                                            // Añade un evento 'mouseover' (al pasar el mouse)
+                                            span.addEventListener('mouseover', () => {
+                                                audio.currentTime = 0; // Reinicia el audio para que se reproduzca desde el principio
+                                                audio.play();
+                                            });
+                                        });
+                                    });
+                                </script>
+
                             </ol>
 
                                 
                         </details>
                                                 
-                         
-
-
-
-
-
 
                 </ol>
             </div>
