@@ -2602,11 +2602,13 @@
                                         <span id="sufijo_20">"My perfect summer vacation would be going abroad with my family."</span> (Mis vacaciones de verano perfectas serían ir al extranjero con mi familia.)<br><br>
 
                                         Orador 1: Ahora escuchemos la historia de Joe, un asistente de vuelo que fue de vacaciones a Tailandia con su novia.<br><br>
+                                        
+                                        
+                                        <p id="story_1">
 
                                         <span id="sufijo_20">Joe, 28, a flight attendant
 
                                         <br><br>Last October, I went on vacation to Thailand for two weeks with my girlfriend, Mia.
-
                                         <br><br>The vacation began well. We spent two days in Bangkok and saw the Floating Market and the Royal Palace. But things went wrong when we left Bangkok. I wanted to stay in hostels, which were basic but clean, but Mia said they were too uncomfortable. So we stayed in very expensive hotels. I wanted to experience the local atmosphere, but Mia just wanted to go shopping. I thought I knew Mia well, but you don't know a person until you travel with him or her. It was awful! We argued about everything.
 
                                         <br><br>For our last four days we went to Ko Chang, a beautiful island. It was like being in paradise. The weather was beautiful and the beaches were wonderful, but we just sunbathed without speaking. We spent our last night back in Bangkok, and we met some travelers from Australia. They were really friendly, and Mia started flirting with one of the boys. That was the end.
@@ -2616,6 +2618,46 @@
                                         <br><br>I took hundreds of photos, but when I got home I didn't show them to anyone.
 
                                         <br><br>you don't know a person until you travel with him or her</span><br><br>
+
+<i>Vocabulary</i>: <strong>anyone</strong> <span id="sufijo_2">/ˈen.i.wʌn/</span> nadie / cualquiera; <strong>argued</strong> <span id="sufijo_2">/ˈɑːɡ.juːd/</span> discutimos; <strong>arrived</strong> <span id="sufijo_2">/əˈraɪvd/</span> llegamos; <strong>began</strong> <span id="sufijo_2">/bɪˈɡæn/</span> comenzó; <strong>being</strong> <span id="sufijo_2">/ˈbiː.ɪŋ/</span> siendo; <strong>break up</strong> <span id="sufijo_2">/ˈbreɪk ʌp/</span> terminar / romper; <strong>flirting</strong> <span id="sufijo_2">/ˈflɜː.tɪŋ/</span> coqueteando; <strong>got</strong> <span id="sufijo_2">/ɡɒt/</span> llegué / obtuve; <strong>knew</strong> <span id="sufijo_2">/njuː/</span> sabía / conocía; <strong>know</strong> <span id="sufijo_2">/nəʊ/</span> conocer / saber; <strong>left</strong> <span id="sufijo_2">/lɛft/</span> dejamos / salimos de; <strong>met</strong> <span id="sufijo_2">/mɛt/</span> conocimos; <strong>said</strong> <span id="sufijo_2">/sɛd/</span> dijo; <strong>saw</strong> <span id="sufijo_2">/sɔː/</span> vi; <strong>spent</strong> <span id="sufijo_2">/spɛnt/</span> pasé; <strong>stayed</strong> <span id="sufijo_2">/steɪd/</span> nos quedamos; <strong>sunbathed</strong> <span id="sufijo_2">/ˈsʌn.beɪðd/</span> tomamos el sol; <strong>thought</strong> <span id="sufijo_2">/θɔːt/</span> pensé; <strong>took</strong> <span id="sufijo_2">/tʊk/</span> tomé; <strong>wanted</strong> <span id="sufijo_2">/ˈwɒn.tɪd/</span> quería; <strong>was</strong> <span id="sufijo_2">/wɒz/</span> fue / era; <strong>went</strong> <span id="sufijo_2">/wɛnt/</span> fui; <strong>went wrong</strong> <span id="sufijo_2">/wɛnt rɒŋ/</span> salió mal;                                        </p>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const storyElement = document.getElementById('story_1');
+    const storyText = storyElement.innerHTML;
+
+    // Lista de palabras que deben tener audio. Asegúrate de que esta lista
+    // coincide con los archivos de audio en tu carpeta.
+    const highlightedWords = ['anyone', 'argued', 'arrived', 'began', 'being', 'break up', 'flirting', 'got', 'knew', 'know', 'left', 'met', 'said', 'saw', 'spent', 'stayed', 'sunbathed', 'thought', 'took', 'wanted', 'was', 'went', 'went wrong'];
+
+    let newStoryHtml = storyText;
+    highlightedWords.forEach(word => {
+        // La expresión regular ahora busca la palabra sin etiquetas adicionales
+        const regex = new RegExp(`\\b(${word})\\b`, 'gi');
+        // El nombre del archivo ahora se crea directamente de la palabra
+        const audioFileName = `${word.toLowerCase().replace(' ', '-')}.wav`;
+        newStoryHtml = newStoryHtml.replace(regex, `<span class="highlighted" data-audio="${audioFileName}">${word}</span>`);
+    });
+
+    storyElement.innerHTML = newStoryHtml;
+
+    const highlightedSpans = document.querySelectorAll('.highlighted');
+
+    highlightedSpans.forEach(span => {
+        const audioFileName = span.dataset.audio;
+        
+        // Ruta a la carpeta donde tienes los archivos .wav
+        const audioPath = `web-ingles/curso-ingles/descargas/audios/vocabulario/${audioFileName}`;
+        
+        const audio = new Audio(audioPath);
+        
+        span.addEventListener('mouseover', () => {
+            audio.currentTime = 0;
+            audio.play();
+        });
+    });
+});
+    </script>
+
 
                                         Orador 2: Vamos con algunas preguntas para comprobar la comprensión:<br><br>
 
@@ -2638,6 +2680,8 @@
 
                                         Orador 1: A continuación leeremos la lectura <span id="sufijo_20">"Laura’s Vacation"</span>.<br><br>
 
+                                        <p id="story_2">
+
                                         <span id="sufijo_20">Laura, 26, a nurse
 
                                         <br><br>Last spring, my best friend Isabelle and I booked a vacation in Costa Rica. We rented a small house for a week with a fantastic view of the ocean. At the last minute another friend, Linda, asked if she could come, too. We felt sorry for her because she had problems with her boyfriend, so we said yes.
@@ -2645,6 +2689,48 @@
                                         <br><br>Costa Rica was magical and the weather was perfect, but the vacation was a disaster for one simple reason: Linda was so cheap! She has a good job so she's not poor, but she just didn't want to pay for anything. When we went sightseeing, she didn't want to go on any cruises or do any nature activities that cost money. When we went on a zipline tour, she complained that it was too expensive. When we went to have lunch or dinner, she always wanted to go to cheap restaurants or she bought a sandwich and ate it in the house. But the night I invited her and Isabelle out on my birthday, she chose the most expensive things on the menu! The worst thing was that although Isabelle and I paid for the house, Linda never once bought us a coffee or a snack.
 
                                         <br><br>I'd love to go back to Costa Rica one day... but without Linda.</span><br><br>
+
+                                        <i>Vocabulary</i>: <strong>although</strong> <span id="sufijo_2">/ɔːlˈðoʊ/</span> aunque; <strong>asked</strong> <span id="sufijo_2">/æskt/</span> preguntó; <strong>ate</strong> <span id="sufijo_2">/eɪt/</span> comió; <strong>booked</strong> <span id="sufijo_2">/bʊkt/</span> reservé; <strong>bought</strong> <span id="sufijo_2">/bɔːt/</span> compró; <strong>cheap</strong> <span id="sufijo_2">/tʃiːp/</span> barato; <strong>complained</strong> <span id="sufijo_2">/kəmˈpleɪnd/</span> se quejó; <strong>could</strong> <span id="sufijo_2">/kʊd/</span> podía; <strong>cruises</strong> <span id="sufijo_2">/kruːzɪz/</span> cruceros; <strong>felt</strong> <span id="sufijo_2">/fɛlt/</span> sentimos; <strong>had</strong> <span id="sufijo_2">/hæd/</span> tenía; <strong>invited</strong> <span id="sufijo_2">/ɪnˈvaɪtɪd/</span> invitó; <strong>paid</strong> <span id="sufijo_2">/peɪd/</span> pagó; <strong>poor</strong> <span id="sufijo_2">/pʊər/</span> pobre; <strong>reason</strong> <span id="sufijo_2">/ˈriːzən/</span> razón; <strong>rented</strong> <span id="sufijo_2">/ˈrɛntɪd/</span> alquilamos; <strong>said</strong> <span id="sufijo_2">/sɛd/</span> dijimos; <strong>sightseeing</strong> <span id="sufijo_2">/ˈsaɪtˌsiːɪŋ/</span> turismo; <strong>want</strong> <span id="sufijo_2">/wɒnt/</span> querer; <strong>wanted</strong> <span id="sufijo_2">/ˈwɒn.tɪd/</span> quería; <strong>was</strong> <span id="sufijo_2">/wɒz/</span> fue / estaba; <strong>weather</strong> <span id="sufijo_2">/ˈwɛðər/</span> clima; <strong>went</strong> <span id="sufijo_2">/wɛnt/</span> fuimos; <strong>worst</strong> <span id="sufijo_2">/wɜːst/</span> peor; <strong>zipline tour</strong> <span id="sufijo_2">/ˈzɪp.laɪn tʊr/</span> tour de tirolesa;
+                                        </p>
+
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const storyElement = document.getElementById('story_2');
+    const storyText = storyElement.innerHTML;
+
+    // Lista de palabras que deben tener audio. Asegúrate de que esta lista
+    // coincide con los archivos de audio en tu carpeta.
+    const highlightedWords = ['although', 'asked', 'ate', 'booked', 'bought', 'cheap', 'complained', 'could', 'cruises', 'felt', 'had', 'invited', 'paid', 'poor', 'reason', 'rented', 'said', 'sightseeing', 'want', 'wanted', 'was', 'weather', 'went', 'worst', 'zipline tour'];
+
+    let newStoryHtml = storyText;
+    highlightedWords.forEach(word => {
+        // La expresión regular ahora busca la palabra sin etiquetas adicionales
+        const regex = new RegExp(`\\b(${word})\\b`, 'gi');
+        // El nombre del archivo ahora se crea directamente de la palabra
+        const audioFileName = `${word.toLowerCase().replace(' ', '-')}.wav`;
+        newStoryHtml = newStoryHtml.replace(regex, `<span class="highlighted" data-audio="${audioFileName}">${word}</span>`);
+    });
+
+    storyElement.innerHTML = newStoryHtml;
+
+    const highlightedSpans = document.querySelectorAll('.highlighted');
+
+    highlightedSpans.forEach(span => {
+        const audioFileName = span.dataset.audio;
+        
+        // Ruta a la carpeta donde tienes los archivos .wav
+        const audioPath = `web-ingles/curso-ingles/descargas/audios/vocabulario/${audioFileName}`;
+        
+        const audio = new Audio(audioPath);
+        
+        span.addEventListener('mouseover', () => {
+            audio.currentTime = 0;
+            audio.play();
+        });
+    });
+});
+    </script>
+
 
                                         Orador 2: Respondamos algunas preguntas sobre su experiencia:<br><br>
 
@@ -2924,8 +3010,7 @@ Vocabulario: <strong>21st</strong> <span id="sufijo_2">/ˈtwɛnti fɜːrst/</spa
             const storyText = storyElement.innerHTML;
 
             // Lista de palabras que tienen un archivo de audio asociado
-            const highlightedWords = ['met', '21st', 'went', 'wanted', 'awful', 'Could', 'something else', 'said', 'called', 'knew', 'left', 'gave', 'invited', 'dinner', 'took', 'Although', 'saw', 'Bridge', 'finished', 'madly', 'raining', 'looked', 'ran', 'driving', 'hurry', 'across', 'wearing', 'coat'
-];
+            const highlightedWords = ['met', '21st', 'went', 'wanted', 'awful', 'Could', 'something else', 'said', 'called', 'knew', 'left', 'gave', 'invited', 'dinner', 'took', 'Although', 'saw', 'Bridge', 'finished', 'madly', 'raining', 'looked', 'ran', 'driving', 'hurry', 'across', 'wearing', 'coat'];
 
             let newStoryHtml = storyText;
             highlightedWords.forEach(word => {
