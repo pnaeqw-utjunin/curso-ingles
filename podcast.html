@@ -2877,7 +2877,9 @@ ul.vocabulario li img {
                                         Orador 2: Exacto.<br> Estas expresiones nos ayudan a contar historias de forma clara y ordenada.<br> Ahora, escuchemos la historia que acompaña este tema.<br> Presten atención a los <span id="sufijo_20">conectores de tiempo</span>.<br><br>
 
                                         Orador 1: A continuación leeremos la lectura <span id="sufijo_20">"One dark October evening"</span>.<br><br>
-
+                                        
+                                        
+                                        <p id="story">
                                         <span id="sufijo_20">Hannah met Jamie in the summer of 2010. It was Hannah's 21st birthday, and she and her friends went to a club. They wanted to dance, but they didn't like the music, so Hannah went to speak to the DJ. "This music is awful," she said. "Could you play something else?" The DJ looked at her and said, "Don't worry, I have the perfect song for you."
 
                                         <br><br>Two minutes later, he said, "The next song is by Scouting For Girls. It's called Blue As Your Eyes, and it's for a beautiful girl who's dancing over there." Hannah knew that the song was for her. When Hannah and her friends left the club, the DJ was waiting for her at the door. "Hi, I'm Jamie," he said to Hannah. "Can I see you again?" So Hannah gave him her phone number.
@@ -2887,6 +2889,75 @@ ul.vocabulario li img {
                                         <br><br>One evening in October, Hannah was at work. As usual she was going to meet Jamie at 5:30. It was dark and it was raining. She looked at her watch. It was 5:20! She was going to be late! She ran to her car and got in. At 5:25 she was driving along Bridge Street.
 
                                         <br><br>She was going very fast because she was in a hurry. Suddenly, a man ran across the street. He was wearing a dark coat, so Hannah didn't see him at first. Quickly, she put her foot on the brake...</span><br><br>
+                                        
+Vocabulario: <strong>21st</strong> <span id="sufijo_2">/ˈtwɛnti fɜːrst/</span> vigésimo primero;
+<strong>across</strong> <span id="sufijo_2">/əˈkrɒs/</span> a través de;
+<strong>Although</strong> <span id="sufijo_2">/ɔːlˈðoʊ/</span> aunque;
+<strong>awful</strong> <span id="sufijo_2">/ˈɔːfəl/</span> horrible, terrible;
+<strong>Bridge</strong> <span id="sufijo_2">/brɪdʒ/</span> puente;
+<strong>called</strong> <span id="sufijo_2">/kɔːld/</span> llamó;
+<strong>coat</strong> <span id="sufijo_2">/koʊt/</span> abrigo;
+<strong>Could</strong> <span id="sufijo_2">/kʊd/</span> podría;
+<strong>dinner</strong> <span id="sufijo_2">/ˈdɪnər/</span> cena;
+<strong>driving</strong> <span id="sufijo_2">/ˈdraɪvɪŋ/</span> conduciendo;
+<strong>finished</strong> <span id="sufijo_2">/ˈfɪnɪʃt/</span> terminó;
+<strong>gave</strong> <span id="sufijo_2">/ɡeɪv/</span> dio;
+<strong>hurry</strong> <span id="sufijo_2">/ˈhɜːri/</span> prisa, apurarse;
+<strong>invited</strong> <span id="sufijo_2">/ɪnˈvaɪtɪd/</span> invitó;
+<strong>knew</strong> <span id="sufijo_2">/njuː/</span> sabía, conocía;
+<strong>left</strong> <span id="sufijo_2">/lɛft/</span> dejó, se fue;
+<strong>looked</strong> <span id="sufijo_2">/lʊkt/</span> miró;
+<strong>madly</strong> <span id="sufijo_2">/ˈmædli/</span> locamente;
+<strong>raining</strong> <span id="sufijo_2">/ˈreɪnɪŋ/</span> lloviendo;
+<strong>ran</strong> <span id="sufijo_2">/ræn/</span> corrió;
+<strong>said</strong> <span id="sufijo_2">/sɛd/</span> dijo;
+<strong>saw</strong> <span id="sufijo_2">/sɔː/</span> vio;
+<strong>something else</strong> <span id="sufijo_2">/ˈsʌmθɪŋ ɛls/</span> algo más;
+<strong>took</strong> <span id="sufijo_2">/tʊk/</span> tomó, llevó;
+<strong>wanted</strong> <span id="sufijo_2">/ˈwɒntɪd/</span> quería, deseaba;
+<strong>wearing</strong> <span id="sufijo_2">/ˈwɛərɪŋ/</span> llevando puesto;
+<strong>went</strong> <span id="sufijo_2">/wɛnt/</span> fue.                                        <br><br></p>
+
+                                        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const storyElement = document.getElementById('story');
+            const storyText = storyElement.innerHTML;
+
+            // Lista de palabras que tienen un archivo de audio asociado
+            const highlightedWords = ['met', '21st', 'went', 'wanted', 'awful', 'Could', 'something else', 'said', 'called', 'knew', 'left', 'gave', 'invited', 'dinner', 'took', 'Although', 'saw', 'Bridge', 'finished', 'madly', 'raining', 'looked', 'ran', 'driving', 'hurry', 'across', 'wearing', 'coat'
+];
+
+            let newStoryHtml = storyText;
+            highlightedWords.forEach(word => {
+                // Envuelve cada palabra en un <span> y le añade un atributo 'data-audio'
+                // para indicar el nombre del archivo de audio.
+                const regex = new RegExp(`\\b(${word})\\b`, 'gi');
+                const audioFileName = `${word.toLowerCase()}.wav`; // 'Could' -> 'could.mp3'
+                newStoryHtml = newStoryHtml.replace(regex, `<span class="highlighted" data-audio="${audioFileName}">${word}</span>`);
+            });
+
+            storyElement.innerHTML = newStoryHtml;
+
+            const highlightedSpans = document.querySelectorAll('.highlighted');
+
+            // Itera sobre cada <span> resaltado
+            highlightedSpans.forEach(span => {
+                const audioFileName = span.dataset.audio; // Obtiene el nombre del archivo del atributo 'data-audio'
+                const audioPath = `descargas/audios/vocabulario/${audioFileName}`;
+                
+                // Crea un objeto de audio para cada palabra y lo precarga.
+                // Esto mejora el rendimiento, ya que el audio estará listo para reproducirse.
+                const audio = new Audio(audioPath);
+                
+                // Añade un evento 'mouseover' (al pasar el mouse)
+                span.addEventListener('mouseover', () => {
+                    audio.currentTime = 0; // Reinicia el audio para que se reproduzca desde el principio
+                    audio.play();
+                });
+            });
+        });
+    </script>
+
 
                                         Orador 2: Muy bien.<br> Ahora que escuchamos la historia, vamos a responder algunas preguntas para comprobar la comprensión.<br><br>
 

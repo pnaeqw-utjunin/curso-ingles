@@ -340,5 +340,13 @@ audio {
   margin: 0;
 }
 
+.highlighted {
+    background-color: rgb(221, 221, 221);
+    cursor: pointer;
+}
+
+.highlighted:hover {
+    background-color: lightgray; /* Este es el color gris que se aplicará al pasar el mouse */
+}
 
 
