@@ -14,6 +14,7 @@ h1{color:rgb(255, 255, 255);}
 #sufijo_10{font-family:'arial';  font-size: 0.9em; font-style: italic; color:#969595}
 #sufijo_11{font-family:'arial';  font-size: 1em; font-weight: bold; color:#008080}
 #sufijo_12{font-family:'arial';  font-size: 0.9em; font-style: italic; color:#0CB7F2}
+#sufijo_13{font-family:'arial';  font-size: 0.8em; font-style: italic; color:#969595}
 #sufijo_20{font-family:'arial';  font-size: 1em; font-style: italic; color: rgb(189, 59, 8)}
 
 body{
@@ -350,3 +351,35 @@ audio {
 }
 
 
+/* traducción */
+
+.reading {
+  max-width: 700px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.toggle {
+  background: none;
+  border: none;
+  color: #b94e00;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 4px 0;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.toggle:hover {
+  color: #ff6600;
+}
+
+.translation {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #444;
+  border-left: 3px solid #ddd;
+  padding-left: 0.8rem;
+}
