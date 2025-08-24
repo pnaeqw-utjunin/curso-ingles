@@ -383,3 +383,10 @@ audio {
   border-left: 3px solid #ddd;
   padding-left: 0.8rem;
 }
+
+.mostrar-audio {
+  display: inline-block !important;
+  visibility: visible !important;
+  width: 100% !important;
+  height: auto !important;
+}
