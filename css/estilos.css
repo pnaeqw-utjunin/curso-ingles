@@ -121,10 +121,22 @@ color: white;
     height: 1em;
     
     
-  
+}
+
+
+#selector summary a{
+    font-size: 0.9em;
+    color:rgb(168, 34, 34);
+    
+   
+    display: flex;
+    align-items: center;
+    height: 1em;
+    width: 100%;
     
     
 }
+
 
 
 #texto_1 p{
@@ -221,20 +233,26 @@ color: white;
         
 }
 
+#selector3 ol,
+#selector3 ul{
+  list-style: none;   /* quita números/viñetas */
+  margin: 0;          /* elimina margen por defecto */
+  padding: 0;         /* elimina sangría a la izquierda */
+}
 
 
 #selector3 li a{
-
-    color: black;
+    font-size: 0.9em;
+    color:rgb(151, 83, 6);
     display:block;
-    padding: 4px;
+    padding: 9px;
     border-top-style:dotted;
     border-width: 1px;
     border-right-style:none;
     border-left-style:none;
     
     border-color: #279247;
-    width: 100%;
+   
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -242,9 +260,8 @@ color: white;
 }
 
 
-
 #selector3 li a:hover{
-    background-color: #c53838;
+    background-color: #c7ecd2;
     
    
     
@@ -390,3 +407,7 @@ audio {
   width: 100% !important;
   height: auto !important;
 }
+
+
+
+
