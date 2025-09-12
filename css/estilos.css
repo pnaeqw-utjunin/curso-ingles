@@ -40,6 +40,35 @@ header {
     
 }
 
+
+
+nav ul {
+  display: flex;       /* Pone los elementos en fila */
+  flex-wrap: wrap;     /* Si no entran, saltan a otra línea */
+  justify-content: center;
+}
+
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dos columnas iguales */
+  gap: 1rem; /* separación entre columnas */
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr; /* solo una columna en celular */
+  }
+  nav ul {
+    flex-direction: column; /* menú en columna */
+  }
+}
+
+
+
+
+
+
 a{
 text-decoration: none;
 color: white;
@@ -61,10 +90,22 @@ color: white;
 
 
 
-.contenedor{
-    width: 900px;
-    margin:auto
+.contenedor {
+  max-width: 900px;   /* ancho máximo */
+  width: 100%;        /* ocupa todo el espacio posible */
+  margin: 0 auto;     /* <-- esto centra horizontalmente */
+  padding: 20px;      /* respiración interna */
+  box-sizing: border-box;
 }
+
+
+main {
+  display: block;  /* en lugar de grid */
+}
+
+
+
+
 
 
 
@@ -268,48 +309,35 @@ color: white;
 }
 
 
-/* Estilos específicos para pantallas anchas (desde 900px) */
+
+/* Pantallas grandes (desktop) */
 @media screen and (min-width: 900px) {
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    .navbar a {
-      margin-left: 20px;
-    }
+  .contenedor {
+    max-width: 900px;   /* hasta 900px de ancho */
+    width: 100%;
   }
-  
-  /* Estilos específicos para pantallas medianas (desde 601px hasta 899px) */
-  @media screen and (min-width: 601px) and (max-width: 899px) {
-    .header {
-      font-size: 18px;
-    }
-  
-    .navbar {
-      flex-direction: column;
-    }
-  
-    .navbar a {
-      margin: 10px 0;
-    }
+  main {
+    grid-template-columns: 1fr 1fr; /* dos columnas */
   }
-  
-  /* Estilos específicos para pantallas pequeñas (hasta 600px) */
-  @media screen and (max-width: 600px) {
-    .header {
-      font-size: 14px;
-    }
-  
-    .navbar {
-      flex-direction: column;
-    }
-  
-    .navbar a {
-      margin: 10px 0;
-    }
+}
+
+/* Pantallas medianas y pequeñas (tablets y celulares) */
+@media screen and (max-width: 899px) {
+  main {
+    grid-template-columns: 1fr; /* solo una columna */
   }
+  nav ul {
+    flex-direction: column; /* menú en columna */
+    align-items: center;
+  }
+  .contenedor {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+
+
 
   .contenedor1 {
     width: 50%; /* O cualquier otro porcentaje que desees */
@@ -408,6 +436,16 @@ audio {
   height: auto !important;
 }
 
+
+
+
+
+.player-fixed {
+  position: sticky;
+  top: 0;          /* se fija en la parte superior */
+  background: white;
+  z-index: 9999;
+}
 
 
 
