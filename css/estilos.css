@@ -41,6 +41,47 @@ header {
     
 }
 
+#grammar-header {
+  background-color: RGB(45, 66, 54);
+
+  
+}
+
+
+#hello-header {
+  background-color: rgb(139, 0, 0);
+
+  
+}
+
+#everyone-header {
+  background-color: rgb(30, 82, 107);
+
+  
+}
+
+#pronunciation-header {
+  background-color: rgb(14, 70, 75);
+
+  
+}
+
+#business-header {
+  background-color: rgb(25, 61, 102);
+
+  
+}
+
+#vocabulary-header {
+  background-color: rgb(13, 70, 128);
+
+  
+}
+
+
+
+
+
 
 
 nav ul {
@@ -447,6 +488,8 @@ audio {
   background: white;
   z-index: 9999;
 }
+
+
 
 
 
