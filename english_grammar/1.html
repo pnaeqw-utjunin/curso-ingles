@@ -53,8 +53,12 @@
                                         
                                         </div>   
                                         
-                                        
-                                        Bienvenidos al <span id="sufijo_20">English Grammar Podcast</span>. Les habla Emily...<br><br>
+                                        <style>
+  .segment-highlight { background: rgba(255, 230, 100, 0.6); }
+</style>
+
+
+                                        <br><br><div id="texto">Bienvenidos al <span id="sufijo_20">English Grammar Podcast</span>. Les habla Emily...<br><br>
 
                                         ...y Carlos. Nos alegra muchísimo tenerlos nuevamente con nosotros. En este episodio vamos a hablar a fondo sobre el tiempo gramatical <span id="sufijo_20">Present Continuous</span> o "Presente Continuo" en inglés. Este tiempo verbal es fundamental para comunicar acciones que están ocurriendo en el momento exacto en que se habla, y también para expresar acciones temporales o en desarrollo.<br><br>
 
@@ -142,8 +146,86 @@
 
                                         ¡Hasta pronto!<br><br>
 
-                                        ¡Adiós y que tengan un excelente día!<br>
+                                        ¡Adiós y que tengan un excelente día!<br></div>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const cont = document.getElementById("texto");
+  let index = -1;                    // sin resaltado al iniciar
+  let segments = [];
+
+  // 1) Re-construir el contenido en segmentos DOM reales
+  const frag = document.createDocumentFragment();
+  let group = []; // nodos acumulados hasta el próximo <br>
+
+  function finalizeGroup() {
+    // ignora grupos vacíos o solo con espacios
+    const onlyWhitespace = group.length === 1 &&
+                           group[0].nodeType === Node.TEXT_NODE &&
+                           group[0].textContent.trim() === "";
+    if (group.length && !onlyWhitespace) {
+      const span = document.createElement("span");
+      span.className = "segment";
+      group.forEach(n => span.appendChild(n));
+      frag.appendChild(span);
+      segments.push(span);
+    } else {
+      // si era un salto vacío, solo preservamos el <br> visualmente
+    }
+    group = [];
+  }
+
+  // Recorre los hijos originales SIN perder listas
+  const children = Array.from(cont.childNodes);
+  children.forEach(node => {
+    if (node.nodeName === "BR") {
+      // cerrar grupo y mantener el <br> para el layout
+      finalizeGroup();
+      frag.appendChild(document.createElement("br"));
+    } else if (node.nodeName === "UL") {
+      // cerrar cualquier grupo abierto antes de insertar la lista
+      finalizeGroup();
+      // Asegurar que cada <li> sea un segmento navegable completo
+      node.querySelectorAll("li").forEach(li => li.classList.add("segment"));
+      frag.appendChild(node); // conservar la lista tal cual
+    } else {
+      // acumula texto e inline elements (incluye sufijo_20/14)
+      group.push(node);
+    }
+  });
+  // cierra el último grupo si quedó algo
+  finalizeGroup();
+
+  // Reemplaza el contenido por el fragment reconstruido
+  cont.innerHTML = "";
+  cont.appendChild(frag);
+
+  // 2) Colección final de segmentos: líneas (span.segment) + <li>
+  segments = Array.from(cont.querySelectorAll(".segment, li.segment"));
+
+  function paint() {
+    segments.forEach(el => el.classList.remove("segment-highlight"));
+    if (index >= 0 && segments[index]) {
+      segments[index].classList.add("segment-highlight");
+      segments[index].scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
+
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Tab") {
+      e.preventDefault();
+      if (!segments.length) return;
+      index = (index + 1) % segments.length;
+      paint();
+    } else if (e.key === "Backspace") {
+      e.preventDefault();
+      if (!segments.length) return;
+      index = (index - 1 + segments.length) % segments.length;
+      paint();
+    }
+  });
+});
+</script>
 
 
 </p>  
