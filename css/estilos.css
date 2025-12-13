@@ -21,11 +21,22 @@ h1{color:rgb(255, 255, 255);}
 body{
 
     font-family: 'arial';
-    font-size: 1em;
-    
+    font-size: 1.2em;
+    line-height: 1.5;
     margin:0;
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 header {
 
@@ -34,8 +45,8 @@ header {
     background-color: rgb(189, 59, 8);
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    position: fixed;
+    padding: 15px;
+    /* position: fixed;*/
     width: 100%;
     
     
@@ -490,6 +501,25 @@ audio {
 }
 
 
+
+
+/* ====== Resaltado de segmentos ====== 
+.segment-highlight {
+  background: rgba(255, 230, 100, 0.6);
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}*/
+
+
+.segment-highlight {
+  background: rgba(255, 230, 100, 0.6);
+  border: 1px solid rgba(255, 200, 0, 0.7);
+  border-radius: 5px;
+  padding: 2px 5px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
 
 
 
