@@ -1,77 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingles</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escuela de Inglés</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand-1:#c0392b;
+      --brand-2:#e67e22;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --mint:#e8f8ee;
+      --mint-strong:#d4f5df;
+      --green:#2ecc71;
+      --card:#ffffff;
+      --bg:#f6f7fb;
+      --shadow: 0 10px 35px rgba(0,0,0,.08);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+    }
+
+    header{
+      background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+      color:#fff;
+      padding: 18px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    header h1{
+      margin:0;
+      font-size:1.6rem;
+      font-weight:700;
+      letter-spacing:.5px;
+    }
+
+    header a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      padding:10px 14px;
+      border-radius:10px;
+      background: rgba(255,255,255,.15);
+    }
+
+    main{
+      max-width: 980px;
+      margin: 36px auto;
+      padding: 0 18px;
+    }
+
+    .card{
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .top{
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .update{
+      margin:0;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .divider{
+      height:1px;
+      background: linear-gradient(90deg, transparent, rgba(46,204,113,.6), transparent);
+      margin: 18px 0;
+    }
+
+    ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:10px;
+    }
+
+    a.item{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:14px 16px;
+      border-radius:12px;
+      text-decoration:none;
+      color:#8a3f00;
+      font-weight:600;
+      background:#fff;
+      border:1px dashed rgba(46,204,113,.55);
+      transition:.2s ease;
+    }
+
+    a.item:hover{
+      background:var(--mint);
+      transform:translateX(6px);
+      box-shadow:0 8px 18px rgba(0,0,0,.08);
+    }
+
+    a.item.active{
+      background: linear-gradient(90deg, var(--mint-strong), #f3fff7);
+      border-left:7px solid var(--green);
+      color:#136b3b;
+    }
+
+    .icon{
+      width:32px;
+      height:32px;
+      display:grid;
+      place-items:center;
+      border-radius:10px;
+      background:rgba(46,204,113,.15);
+    }
+
+    .text small{
+      display:block;
+      font-weight:500;
+      color:var(--muted);
+      font-size:.85rem;
+    }
+
+    @media (max-width:520px){
+      header h1{ font-size:1.3rem; }
+      .card{ padding:20px; }
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <h1>Escuela de Inglés</h1>
+    <a href="#">Inicio</a>
+  </header>
 
-<header>
+  <main>
+    <section class="card">
+      <div class="top">
+        <p class="subtitle">Tu plataforma de aprendizaje de inglés</p>
+        <p class="update">Última actualización: 30/11/2025</p>
+      </div>
 
-<h1>Escuela de Ingles</h1>
+      <div class="divider"></div>
 
-<nav>
-
-    <a href="index.html">Inicio</a>
-    
-    
-    
-
-</nav>
-
-</header>
-
-
-
-
-<div class="contenedor" >
-<br>
-
-
-
-<div id="texto_2">Última actualización 30/11/2025</div>
-
-<div id="segmento">
-
-
-
-<div id="selector3">
-
-                                <ol>
-                                    <li><a href="English_on_the_go.html" target="_blank">English on the go!</a></li>
-                                    <li><a href="Hello_English_File.html" target="_blank">Hello English! File</a></li>
-                                    <li><a href="Hello_English_Navigate.html" target="_blank">Hello English! Navigate</a></li>
-                                    <li><a href="English_explorer.html" target="_blank">English Explorer</a></li>
-                                    
-                                    <li><a href="English_grammar.html" target="_blank">English Grammar</a></li>
-                                    <li><a href="English_for_everyone.html" target="_blank">English for everyone</a></li>
-                                    <li><a href="English_pronunciation.html" target="_blank">English Pronunciation</a></li>
-                                    <li><a href="English_for_business.html" target="_blank">English for Business</a></li>
-                                    <li><a href="Vocabulary_English_Lab.html" target="_blank">Vocabulary English Lab</a></li>
-                                    <li><a href="American_English_File.html" target="_blank">American English File</a></li>
-                                    
-                                    
-
-
-                                </ol>  
-
-</div>
-
-
-
-
-</div>
-
-</div>
-
+      <ul>
+        
+        <li><a class="item" href="Hello_English_File.html"><span class="icon">📁</span><span class="text">Hello English! File<small>Material por lecciones</small></span></a></li>
+        <li><a class="item" href="Hello_English_Navigate.html"><span class="icon">🧭</span><span class="text">Hello English! Navigate<small>Ruta guiada</small></span></a></li>
+        <li><a class="item" href="English_on_the_go.html" ><span class="icon">🎧</span><span class="text">English on the go!<small>Escucha diaria</small></span></a></li>
+        <li><a class="item" href="English_explorer.html"><span class="icon">🗺️</span><span class="text">English Explorer<small>Temas y conversación</small></span></a></li>
+        <li><a class="item" href="English_grammar.html"><span class="icon">📘</span><span class="text">English Grammar<small>Reglas claras</small></span></a></li>
+        <li><a class="item active" href="English_for_everyone.html"><span class="icon">🌍</span><span class="text">English for everyone<small>Base sólida</small></span></a></li>
+        <li><a class="item" href="English_pronunciation.html"><span class="icon">🗣️</span><span class="text">English Pronunciation<small>IPA y speaking</small></span></a></li>
+        <li><a class="item" href="English_for_business.html"><span class="icon">💼</span><span class="text">English for Business<small>Contexto laboral</small></span></a></li>
+        <li><a class="item" href="Vocabulary_English_Lab.html"><span class="icon">🧠</span><span class="text">Vocabulary English Lab<small>Vocabulario</small></span></a></li>
+        <li><a class="item" href="American_English_File.html"><span class="icon">🇺🇸</span><span class="text">American English File<small>Enfoque USA</small></span></a></li>
+      </ul>
+    </section>
+  </main>
 </body>
-
 </html>
+
 
 
 

@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acceso y Pago | Escuela de Inglés</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand-1:#c0392b;
+      --brand-2:#e67e22;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --line:#e5e7eb;
+      --ok:#2ecc71;
+      --shadow: 0 10px 35px rgba(0,0,0,.08);
+      --radius: 16px;
+    }
+    *{ box-sizing:border-box; }
+    body{ margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--text); background:var(--bg); }
+
+    header{
+      background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+      color:#fff;
+      padding: 18px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    header .title{ display:flex; align-items:center; gap:10px; }
+    header h1{ margin:0; font-size:1.35rem; font-weight:800; letter-spacing:.3px; }
+    header p{ margin:0; opacity:.92; font-weight:500; }
+
+    header a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      padding:10px 14px;
+      border-radius:12px;
+      background: rgba(255,255,255,.18);
+      transition:.2s ease;
+      white-space:nowrap;
+    }
+    header a:hover{ background: rgba(255,255,255,.28); transform: translateY(-1px); }
+
+    main{ max-width: 1080px; margin: 26px auto 44px; padding: 0 18px; }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      align-items:start;
+    }
+    @media (max-width: 900px){ .hero{ grid-template-columns: 1fr; } }
+
+    .card{
+      background:var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,.04);
+      overflow:hidden;
+    }
+
+    .card .inner{ padding: 18px; }
+
+    .badge{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      background: rgba(46,204,113,.12);
+      color:#136b3b;
+      border: 1px solid rgba(46,204,113,.25);
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: .9rem;
+    }
+
+    h2{ margin: 12px 0 8px; font-size: 1.55rem; letter-spacing: -.2px; }
+    .lead{ margin:0; color:var(--muted); font-size: 1rem; line-height: 1.5; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    @media (max-width: 640px){ .grid{ grid-template-columns: 1fr; } }
+
+    .mini{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      background: #fff;
+    }
+    .mini h3{ margin:0 0 6px; font-size:1rem; }
+    .mini p{ margin:0; color: var(--muted); line-height: 1.45; font-size:.95rem; }
+
+    .plans{ margin-top: 14px; }
+    .plan{
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      align-items:center;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      background:#fff;
+      margin-bottom: 10px;
+    }
+    .plan strong{ font-size: 1rem; }
+    .plan small{ display:block; color: var(--muted); margin-top: 2px; }
+    .price{ font-weight: 900; font-size: 1.05rem; white-space:nowrap; }
+
+    .cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 0;
+      font-weight: 800;
+      cursor:pointer;
+      text-decoration:none;
+      transition:.2s ease;
+    }
+    .btn.primary{
+      background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+      color:#fff;
+    }
+    .btn.primary:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+
+    .btn.ghost{
+      background:#fff;
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+    .btn.ghost:hover{ transform: translateY(-1px); box-shadow: 0 8px 18px rgba(0,0,0,.06); }
+
+    .side-head{
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(90deg, rgba(192,57,43,.95), rgba(230,126,34,.95));
+      color:#fff;
+    }
+    .side-head h3{ margin:0; font-size: 1.05rem; }
+    .side-head p{ margin:6px 0 0; opacity:.92; font-weight:500; }
+
+    .steps{
+      display:grid;
+      gap:10px;
+      padding: 16px 18px;
+    }
+
+    .step{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      background:#fff;
+    }
+    .step b{ display:block; margin-bottom: 6px; }
+    .step .hint{ color: var(--muted); margin:0; line-height:1.45; font-size:.95rem; }
+
+    .details{
+      border-top: 1px solid var(--line);
+      padding: 14px 18px;
+      display:grid;
+      gap:10px;
+      background:#fff;
+    }
+
+    .field{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      background: #fff;
+    }
+    .field label{ display:block; font-weight:800; font-size:.9rem; margin-bottom:6px; }
+    .field .value{ display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-weight:800; }
+
+    .copy{
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #f9fafb;
+      font-weight: 900;
+      cursor:pointer;
+    }
+
+    .legal{
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .9rem;
+      line-heights: 1.5;
+    }
+
+    .faq{ margin-top: 16px; }
+    details{ border:1px solid var(--line); border-radius: 14px; background:#fff; padding: 12px 14px; }
+    details + details{ margin-top: 10px; }
+    summary{ font-weight:900; cursor:pointer; }
+    details p{ color: var(--muted); margin: 8px 0 0; line-height:1.45; }
+
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      background: rgba(17,24,39,.92);
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: .95rem;
+      opacity: 0;
+      pointer-events:none;
+      transition: opacity .2s ease;
+    }
+    .toast.show{ opacity: 1; }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(46,204,113,.22);
+      background: rgba(46,204,113,.10);
+      color:#136b3b;
+      font-weight: 800;
+      font-size:.9rem;
+      margin-top: 10px;
+    }
+
+    .muted{ color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">
+      <div>
+        <h1>Acceso y Pago</h1>
+        <p>Escuela de Inglés</p>
+      </div>
+    </div>
+    <a href="index.html">← Volver a la portada</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <!-- LEFT: VALUE + PLANS -->
+      <div class="card">
+        <div class="inner">
+          <span class="badge">✅ Acceso privado tras verificación de pago</span>
+          <h2>Elige tu plan y accede a la plataforma</h2>
+          <p class="lead">Aprende inglés a tu ritmo con podcasts, rutas por nivel, gramática clara y pronunciación con IPA. Sin horarios y desde cualquier dispositivo.</p>
+
+          <div class="grid">
+            <div class="mini">
+              <h3>🎧 Contenido práctico</h3>
+              <p>Podcasts y lecciones guiadas para escuchar, repetir y avanzar con estructura.</p>
+            </div>
+            <div class="mini">
+              <h3>🗣️ Pronunciación (IPA)</h3>
+              <p>Aprende sonidos reales con símbolos fonéticos internacionales y práctica.</p>
+            </div>
+            <div class="mini">
+              <h3>📘 Gramática clara</h3>
+              <p>Explicaciones simples + ejemplos, para entender sin memorizar de más.</p>
+            </div>
+            <div class="mini">
+              <h3>📱 Acceso multiplataforma</h3>
+              <p>Celular, laptop o tablet. Tú decides el ritmo y el horario.</p>
+            </div>
+          </div>
+
+          <div class="plans">
+            <div class="plan">
+              <div>
+                <strong>Plan Mensual</strong>
+                <small>Acceso completo por 30 días</small>
+              </div>
+              <div class="price">S/ 29.90</div>
+            </div>
+
+            <div class="plan">
+              <div>
+                <strong>Plan Trimestral</strong>
+                <small>Mejor para progreso sostenido</small>
+              </div>
+              <div class="price">S/ 79.90</div>
+            </div>
+
+            <div class="plan">
+              <div>
+                <strong>Acceso Completo</strong>
+                <small>Ideal para autodidactas (pago único)</small>
+              </div>
+              <div class="price">S/ 149.90</div>
+            </div>
+          </div>
+
+          <div class="cta">
+            <!-- Reemplaza el link de WhatsApp por el tuyo (formato wa.me/51xxxxxxxxx) -->
+            <a class="btn primary" id="btn-whatsapp" href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20quiero%20acceder%20a%20la%20Escuela%20de%20Ingl%C3%A9s.%20Mi%20plan%20es%3A%20____.%20Adjunto%20comprobante." target="_blank" rel="noopener">💬 Enviar comprobante por WhatsApp</a>
+            <button class="btn ghost" id="btn-copiar">📋 Copiar datos de pago</button>
+            <a class="btn ghost" href="#faq">❓ Ver preguntas frecuentes</a>
+          </div>
+
+          <p class="legal"><b>Importante:</b> El acceso se habilita manualmente después de verificar el pago y el comprobante. Al habilitarse el acceso, no se realizan devoluciones (salvo error atribuible al emisor).</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: PAYMENT DETAILS + STEPS -->
+      <aside class="card">
+        <div class="side-head">
+          <h3>Datos para el pago</h3>
+          <p>Completa el pago y envía tu comprobante para habilitar el acceso.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <b>1) Realiza el pago</b>
+            <p class="hint">Usa Yape/Plin o transferencia. Coloca tu nombre y DNI en el concepto (si aplica).</p>
+          </div>
+          <div class="step">
+            <b>2) Envía el comprobante</b>
+            <p class="hint">Por WhatsApp o correo. Indica tu plan elegido.</p>
+          </div>
+          <div class="step">
+            <b>3) Recibe tu acceso</b>
+            <p class="hint">Te enviamos el link privado y/o tu clave de acceso.</p>
+          </div>
+          <span class="pill">🔒 Acceso privado y verificado</span>
+        </div>
+
+        <div class="details" aria-label="Datos de pago">
+          <!-- REEMPLAZA ESTOS DATOS POR LOS TUYOS -->
+          <div class="field">
+            <label>Banco / Billetera</label>
+            <div class="value">
+              <span class="mono" id="dato-banco">Yape / Plin / BCP</span>
+              <button class="copy" data-copy="dato-banco">Copiar</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Número de cuenta / celular</label>
+            <div class="value">
+              <span class="mono" id="dato-cuenta">999 999 999</span>
+              <button class="copy" data-copy="dato-cuenta">Copiar</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Titular</label>
+            <div class="value">
+              <span class="mono" id="dato-titular">NOMBRE DEL TITULAR</span>
+              <button class="copy" data-copy="dato-titular">Copiar</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Correo para enviar comprobante (opcional)</label>
+            <div class="value">
+              <span class="mono" id="dato-correo">tu_correo@dominio.com</span>
+              <button class="copy" data-copy="dato-correo">Copiar</button>
+            </div>
+            <p class="muted" style="margin:8px 0 0; font-size:.9rem;">Si envías por correo, indica: plan + nombre + DNI.</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="faq" id="faq" aria-label="Preguntas frecuentes">
+      <h2 style="margin:18px 0 10px;">Preguntas frecuentes</h2>
+
+      <details open>
+        <summary>¿Cuánto tarda la activación?</summary>
+        <p>La activación se realiza manualmente tras verificar el pago y el comprobante. En horario habitual suele ser el mismo día.</p>
+      </details>
+
+      <details>
+        <summary>¿Cómo recibo el acceso?</summary>
+        <p>Te enviamos un enlace privado y, si aplica, una clave. La plataforma funciona en celular y PC.</p>
+      </details>
+
+      <details>
+        <summary>¿Puedo cancelar y pedir devolución?</summary>
+        <p>Una vez habilitado el acceso, no se realizan devoluciones, salvo error atribuible al emisor (por ejemplo, cobro duplicado verificado).</p>
+      </details>
+
+      <details>
+        <summary>¿Qué necesito enviar en el comprobante?</summary>
+        <p>Foto o captura del comprobante + plan elegido + tu nombre y DNI (o correo) para identificarte y habilitar el acceso.</p>
+      </details>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">Copiado ✅</div>
+
+  <script>
+    const toast = document.getElementById('toast');
+    let toastTimer;
+
+    function showToast(msg){
+      toast.textContent = msg || 'Copiado ✅';
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 1400);
+    }
+
+    async function copyText(text){
+      try{
+        await navigator.clipboard.writeText(text);
+        showToast('Copiado ✅');
+      }catch(e){
+        // Fallback
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast('Copiado ✅');
+      }
+    }
+
+    // Copiar cada campo
+    document.querySelectorAll('.copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-copy');
+        const el = document.getElementById(id);
+        if(!el) return;
+        copyText(el.textContent.trim());
+      });
+    });
+
+    // Copiar todos los datos (botón principal)
+    document.getElementById('btn-copiar').addEventListener('click', () => {
+      const banco = document.getElementById('dato-banco').textContent.trim();
+      const cuenta = document.getElementById('dato-cuenta').textContent.trim();
+      const titular = document.getElementById('dato-titular').textContent.trim();
+      const correo = document.getElementById('dato-correo').textContent.trim();
+
+      const all = `DATOS DE PAGO\nBanco/Billetera: ${banco}\nCuenta/Celular: ${cuenta}\nTitular: ${titular}\nCorreo: ${correo}`;
+      copyText(all);
+      showToast('Datos copiados ✅');
+    });
+  </script>
+</body>
+</html>

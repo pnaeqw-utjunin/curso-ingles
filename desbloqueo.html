@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sistema de Desbloqueo (Demo) | Escuela de Inglés</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --ok:#16a34a; --warn:#b45309; --bad:#dc2626; --shadow:0 10px 30px rgba(0,0,0,.08); }
+    *{ box-sizing:border-box; }
+    body{ margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--text); }
+    header{ padding:16px 18px; background:#111827; color:#fff; }
+    header h1{ margin:0; font-size:1.05rem; }
+    main{ max-width:980px; margin:22px auto 50px; padding:0 18px; display:grid; gap:14px; }
+    .card{ background:var(--card); border:1px solid rgba(0,0,0,.04); border-radius:16px; box-shadow:var(--shadow); overflow:hidden; }
+    .inner{ padding:16px; }
+    h2{ margin:0 0 8px; font-size:1.25rem; }
+    p{ margin:0; color:var(--muted); line-height:1.5; }
+    .row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media (max-width:860px){ .row{ grid-template-columns:1fr; } }
+
+    label{ display:block; font-weight:800; font-size:.9rem; margin:0 0 6px; }
+    input, select{ width:100%; padding:12px 12px; border-radius:12px; border:1px solid var(--line); font-weight:700; }
+
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 14px; border-radius:12px; border:1px solid var(--line); background:#fff; cursor:pointer; font-weight:900; }
+    .btn.primary{ background:#111827; color:#fff; border-color:#111827; }
+    .btn.primary:hover{ filter:brightness(1.05); transform:translateY(-1px); }
+    .btn:hover{ transform:translateY(-1px); box-shadow:0 8px 18px rgba(0,0,0,.06); }
+
+    .stack{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+
+    .status{ padding:10px 12px; border-radius:12px; border:1px solid var(--line); background:#fff; margin-top:12px; font-weight:800; }
+    .ok{ color:var(--ok); }
+    .warn{ color:var(--warn); }
+    .bad{ color:var(--bad); }
+
+    code{ background:#0b1220; color:#e5e7eb; padding:2px 6px; border-radius:8px; }
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+    .note{ font-size:.92rem; }
+    .hr{ height:1px; background:var(--line); margin:12px 0; }
+
+    .pill{ display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:999px; border:1px solid rgba(22,163,74,.25); background:rgba(22,163,74,.08); color:#14532d; font-weight:900; font-size:.9rem; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Escuela de Inglés — Sistema de Desbloqueo (HTML + JS) — Implementación Manual</h1>
+</header>
+
+<main>
+  <section class="card">
+    <div class="inner">
+      <h2>Cómo funciona (simple y práctico)</h2>
+      <p class="note">
+        Este sistema permite <b>habilitar acceso</b> con un <b>código</b> que tú entregas al alumno tras verificar el pago.
+        Se guarda en <code>localStorage</code> y puede tener <b>vencimiento</b> (mensual o trimestral).<br>
+        <span class="pill">⚠️ Importante:</span> esto es un “candado” de <b>cliente</b>. Sirve para uso real y ordenado, pero no es seguridad absoluta como un servidor con login.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="inner">
+      <div class="row">
+        <!-- 1) PÁGINA DE ACCESO PARA EL ALUMNO -->
+        <div>
+          <h2>1) Página de acceso (alumno)</h2>
+          <p>Archivo sugerido: <span class="mono">/acceso.html</span>. El alumno ingresa su código, y se habilita el acceso.</p>
+
+          <div class="hr"></div>
+
+          <label for="codeInput">Código de acceso</label>
+          <input id="codeInput" placeholder="Ej: ENG-3M-AB12CD" />
+
+          <div class="stack">
+            <button class="btn primary" id="btnUnlock">🔓 Desbloquear</button>
+            <button class="btn" id="btnLogout">🚪 Cerrar sesión</button>
+            <button class="btn" id="btnGo">➡️ Ir a la plataforma (demo)</button>
+          </div>
+
+          <div class="status" id="accessStatus">Estado: <span class="warn">No verificado</span></div>
+        </div>
+
+        <!-- 2) GENERADOR DE CÓDIGOS (PARA TI) -->
+        <div>
+          <h2>2) Generador de códigos (tú)</h2>
+          <p>Genera códigos para entregar a alumnos según plan. Archivo sugerido: <span class="mono">/admin_codigos.html</span></p>
+
+          <div class="hr"></div>
+
+          <label for="plan">Plan</label>
+          <select id="plan">
+            <option value="M">Mensual (30 días)</option>
+            <option value="T">Trimestral (90 días)</option>
+            <option value="FULL">Acceso completo (sin vencimiento)</option>
+          </select>
+
+          <label for="student">Nombre o ID del alumno (opcional)</label>
+          <input id="student" placeholder="Ej: DAVID / DNI / correo" />
+
+          <div class="stack">
+            <button class="btn primary" id="btnGen">🧾 Generar código</button>
+            <button class="btn" id="btnCopyGen">📋 Copiar</button>
+          </div>
+
+          <div class="status mono" id="genOut">Código: —</div>
+          <p class="note">Tip: Puedes enviar el código por WhatsApp junto con el link <span class="mono">acceso.html</span>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="inner">
+      <h2>3) Protección de páginas (lo importante)</h2>
+      <p>
+        En cada página “premium” (por ejemplo <span class="mono">/premium/index.html</span>) pegas el bloque de verificación.
+        Si no hay acceso válido, redirige a <span class="mono">/acceso.html</span>.
+      </p>
+
+      <div class="hr"></div>
+
+      <p class="note"><b>Bloque para pegar al inicio del &lt;head&gt; o antes del contenido:</b></p>
+      <pre class="mono" style="white-space:pre-wrap; background:#0b1220; color:#e5e7eb; padding:12px; border-radius:14px; overflow:auto; margin:10px 0 0;">
+&lt;script&gt;
+  (function guard(){
+    const KEY = 'ei_access_v1';
+    const raw = localStorage.getItem(KEY);
+    if(!raw){ window.location.href = '/acceso.html'; return; }
+
+    try{
+      const data = JSON.parse(raw);
+      // Si hay vencimiento, validar
+      if(data.expiresAt && Date.now() &gt; data.expiresAt){
+        localStorage.removeItem(KEY);
+        window.location.href = '/acceso.html?expired=1';
+        return;
+      }
+    }catch(e){
+      localStorage.removeItem(KEY);
+      window.location.href = '/acceso.html';
+    }
+  })();
+&lt;/script&gt;
+      </pre>
+
+      <p class="note" style="margin-top:10px;">Puedes cambiar <span class="mono">/acceso.html</span> a la ruta real de tu landing de acceso.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="inner">
+      <h2>Recomendación de mejora (seguridad real)</h2>
+      <p>
+        Si quieres que nadie comparta el link, lo ideal es un backend mínimo:
+        Cloudflare Pages + Functions / Netlify Functions / Firebase Auth.
+        Pero si por ahora quieres algo rápido y manejable, este método funciona bien para ventas manuales.
+      </p>
+    </div>
+  </section>
+</main>
+
+<script>
+  // =========================
+  // CONFIG
+  // =========================
+  const ACCESS_KEY = 'ei_access_v1';
+  // Lista de códigos válidos (opción A): manual / estática (NO recomendado para muchos alumnos)
+  // Mejor opción: verificar por “prefijo + checksum” (opción B) como aquí.
+
+  // =========================
+  // UTILIDADES
+  // =========================
+  function base36(len){
+    const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let out = '';
+    crypto.getRandomValues(new Uint32Array(len)).forEach(n => { out += chars[n % chars.length]; });
+    return out;
+  }
+
+  function checksum6(s){
+    // checksum simple (no criptográfico), suficiente para evitar errores de tipeo
+    let x = 0;
+    for(let i=0;i<s.length;i++) x = (x + s.charCodeAt(i) * (i+17)) % 2176782336;
+    return (x.toString(36).toUpperCase().padStart(6,'0')).slice(0,6);
+  }
+
+  function makeCode(plan){
+    // Formato: ENG-{PLAN}-{RAND6}-{CHK6}
+    const rand = base36(6);
+    const core = `ENG-${plan}-${rand}`;
+    const chk = checksum6(core);
+    return `${core}-${chk}`;
+  }
+
+  function parsePlanFromCode(code){
+    // ENG-M-XXXXXX-YYYYYY | ENG-T-XXXXXX-YYYYYY | ENG-FULL-XXXXXX-YYYYYY
+    const parts = code.trim().toUpperCase().split('-');
+    if(parts.length !== 5) return null;
+    if(parts[0] !== 'ENG') return null;
+    const plan = parts[1];
+    const rand = parts[2];
+    const chk = parts[4];
+    const core = `ENG-${plan}-${rand}`;
+    if(checksum6(core) !== chk) return null;
+    if(!['M','T','FULL'].includes(plan)) return null;
+    return { plan, rand };
+  }
+
+  function expiresAtForPlan(plan){
+    if(plan === 'M') return Date.now() + 30*24*60*60*1000;
+    if(plan === 'T') return Date.now() + 90*24*60*60*1000;
+    return null; // FULL
+  }
+
+  function setAccess(plan, code){
+    const data = {
+      v: 1,
+      plan,
+      code,
+      issuedAt: Date.now(),
+      expiresAt: expiresAtForPlan(plan)
+    };
+    localStorage.setItem(ACCESS_KEY, JSON.stringify(data));
+  }
+
+  function getAccess(){
+    const raw = localStorage.getItem(ACCESS_KEY);
+    if(!raw) return null;
+    try{
+      const data = JSON.parse(raw);
+      if(data.expiresAt && Date.now() > data.expiresAt) return { expired:true, data };
+      return { expired:false, data };
+    }catch(e){
+      return null;
+    }
+  }
+
+  // =========================
+  // UI: ACCESO
+  // =========================
+  const statusEl = document.getElementById('accessStatus');
+  const codeInput = document.getElementById('codeInput');
+
+  function renderStatus(){
+    const st = getAccess();
+    if(!st){
+      statusEl.innerHTML = 'Estado: <span class="warn">No verificado</span>';
+      return;
+    }
+    if(st.expired){
+      statusEl.innerHTML = 'Estado: <span class="bad">Vencido</span> — vuelve a solicitar renovación';
+      return;
+    }
+    const { plan, expiresAt } = st.data;
+    const planName = plan === 'M' ? 'Mensual' : plan === 'T' ? 'Trimestral' : 'Acceso completo';
+    const exp = expiresAt ? new Date(expiresAt).toLocaleString('es-PE') : 'Sin vencimiento';
+    statusEl.innerHTML = `Estado: <span class="ok">Activo</span> — ${planName} — vence: <span class="mono">${exp}</span>`;
+  }
+
+  document.getElementById('btnUnlock').addEventListener('click', () => {
+    const code = codeInput.value.trim().toUpperCase();
+    const parsed = parsePlanFromCode(code);
+    if(!parsed){
+      alert('Código inválido. Verifica que esté bien escrito (incluye guiones).');
+      return;
+    }
+    setAccess(parsed.plan, code);
+    renderStatus();
+    alert('Acceso habilitado ✅');
+  });
+
+  document.getElementById('btnLogout').addEventListener('click', () => {
+    localStorage.removeItem(ACCESS_KEY);
+    renderStatus();
+    alert('Sesión cerrada.');
+  });
+
+  document.getElementById('btnGo').addEventListener('click', () => {
+    // Cambia esta ruta a tu home premium
+    window.location.href = '/premium/index.html';
+  });
+
+  // =========================
+  // UI: GENERADOR
+  // =========================
+  const genOut = document.getElementById('genOut');
+  let lastGen = '';
+
+  document.getElementById('btnGen').addEventListener('click', () => {
+    const plan = document.getElementById('plan').value;
+    const student = document.getElementById('student').value.trim();
+    const code = makeCode(plan);
+    lastGen = code;
+    genOut.textContent = `Código: ${code}${student ? ' | Alumno: ' + student : ''}`;
+  });
+
+  document.getElementById('btnCopyGen').addEventListener('click', async () => {
+    if(!lastGen){ alert('Primero genera un código.'); return; }
+    try{ await navigator.clipboard.writeText(lastGen); }
+    catch(e){
+      const ta = document.createElement('textarea');
+      ta.value = lastGen;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    alert('Código copiado ✅');
+  });
+
+  // Inicial
+  renderStatus();
+</script>
+</body>
+</html>
