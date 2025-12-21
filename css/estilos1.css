@@ -97,11 +97,116 @@ body{
 }
 
 
+/* HEADER PRONUNCIATION*/
+#pronunciation-header{
+  background: #0a3a3d;
+
+  color:#fff;
+  padding: 18px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+#pronunciation-header h1{
+  margin:0;
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+
+#pronunciation-header nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.18);
+  transition: .2s ease;
+  white-space: nowrap;
+}
+
+#pronunciation-header nav a:hover{
+  background: rgba(255,255,255,.28);
+  transform: translateY(-1px);
+}
 
 
 
+/* HEADER business*/
+#business-header{
+  background: rgb(25, 61, 102);
+
+  color:#fff;
+  padding: 18px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+#business-header h1{
+  margin:0;
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+
+#business-header nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.18);
+  transition: .2s ease;
+  white-space: nowrap;
+}
+
+#business-header nav a:hover{
+  background: rgba(255,255,255,.28);
+  transform: translateY(-1px);
+}
 
 
+/* HEADER vocabulary*/
+#vocabulary-header{
+  background:  rgb(13, 70, 128);
+
+  color:#fff;
+  padding: 18px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+#vocabulary-header h1{
+  margin:0;
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+
+#vocabulary-header nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.18);
+  transition: .2s ease;
+  white-space: nowrap;
+}
+
+#vocabulary-header nav a:hover{
+  background: rgba(255,255,255,.28);
+  transform: translateY(-1px);
+}
 
 
 
