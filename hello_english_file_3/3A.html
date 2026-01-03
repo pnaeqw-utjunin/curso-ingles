@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingles</title>
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos1.css">
     
 
 </head>
@@ -24,24 +24,26 @@
 
 
 <div class="contenedor" >
-<br>
-<br>
 
 
-
-
-
-<div id="texto_2">Última actualización 14/12/2025</div>
 
 <div id="segmento">
 
-
+<div class="lesson-reader">
 
    
 <p>
                                         
+                                        
 <div class="player-fixed">
                                         
+
+</div>
+
+                                        
+
+<div id="texto">
+
 ¡Hola, hola! Bienvenidos a un nuevo episodio de <span id="sufijo_20">Hello English</span>! Hoy presentamos la clase titulada <span id="sufijo_20">Race across Miami</span> – <span id="sufijo_14">Carrera a través de Miami</span>. Nuestro objetivo será aprender vocabulario relacionado con transporte, practicar comparativos y superlativos, mejorar nuestra pronunciación con <span id="sufijo_20">linking</span> – <span id="sufijo_14">enlace de palabras</span>, y disfrutar de una historia emocionante sobre una carrera de <span id="sufijo_20">Top Gear</span> a través de <span id="sufijo_20">Florida</span>.<br><br>
 ¡Qué emoción! Me encantan las historias de carreras y competencias. Hoy vamos a conocer sobre diferentes formas de viajar por <span id="sufijo_20">Miami</span> y <span id="sufijo_20">Florida</span>.<br><br>
 Exacto. Y para comenzar, necesitamos aprender vocabulario sobre transporte. En inglés existen muchas formas de moverse de un lugar a otro.<br><br>
@@ -154,121 +156,24 @@ Gracias por acompañarnos en este episodio de <span id="sufijo_20">Hello English
 ¡Hasta pronto! <span id="sufijo_20">Keep practicing and remember, the more you practice, the better you get!</span> – <span id="sufijo_14">¡Sigan practicando y recuerden, mientras más practiquen, mejores se vuelven!</span>
 
 
-</div>
-
-<br><br>
-<div id="texto">
-
-
-
-
 
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const cont = document.getElementById("texto");
-  let index = -1;
-  let segments = [];
-
-  // --- Reconstrucción por líneas manteniendo <br> y <ul>/<li> ---
-  const frag = document.createDocumentFragment();
-  let buffer = [];
-
-  function pushLineSegment() {
-    // Evitar líneas vacías puras
-    if (
-      buffer.length === 1 &&
-      buffer[0].nodeType === Node.TEXT_NODE &&
-      buffer[0].textContent.trim() === ""
-    ) {
-      buffer = [];
-      return;
-    }
-    if (buffer.length) {
-      const span = document.createElement("span");
-      span.className = "segment"; // inline por defecto
-      buffer.forEach(n => span.appendChild(n));
-      frag.appendChild(span);
-      segments.push(span);
-      buffer = [];
-    }
-  }
-
-  Array.from(cont.childNodes).forEach(node => {
-    if (node.nodeName === "BR") {
-      pushLineSegment();
-      frag.appendChild(document.createElement("br"));
-    } else if (node.nodeName === "UL") {
-      // Cerrar cualquier línea antes de insertar la lista
-      pushLineSegment();
-
-      // Para cada <li>, creamos un inner inline para resaltar sin tocar el <li>
-      node.querySelectorAll(":scope > li").forEach(li => {
-        if (!li.__wrappedForHighlight) {
-          const inner = document.createElement("span");
-          inner.className = "segment-inner"; // inline
-          // Mover todo el contenido del li dentro del inner
-          while (li.firstChild) inner.appendChild(li.firstChild);
-          li.appendChild(inner);
-          li.__wrappedForHighlight = true;
-        }
-        // Guardamos el "inner" como segmento (no el <li>)
-        const innerRef = li.querySelector(":scope > .segment-inner");
-        segments.push(innerRef);
-      });
-
-      frag.appendChild(node); // conservar la lista tal cual
-    } else {
-      buffer.push(node);
-    }
-  });
-  // último grupo
-  pushLineSegment();
-
-  // Sustituir contenido por el fragmento
-  cont.innerHTML = "";
-  cont.appendChild(frag);
-
-  // --- Navegación y pintado ---
-  function clearHighlights() {
-    segments.forEach(el => el.classList.remove("segment-highlight"));
-  }
-
-  function paint() {
-    clearHighlights();
-    if (index >= 0 && segments[index]) {
-      const el = segments[index];
-      el.classList.add("segment-highlight");
-      // NO tocar display/width para evitar saltos en <li>
-      el.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  }
-
-  document.addEventListener("keydown", e => {
-    if (e.key === "Tab") {
-      e.preventDefault();
-      if (!segments.length) return;
-      index = (index + 1) % segments.length;
-      paint();
-    } else if (e.key === "Backspace") {
-      e.preventDefault();
-      if (!segments.length) return;
-      index = (index - 1 + segments.length) % segments.length;
-      paint();
-    }
-  });
-});
-</script>
-
-
+<script src="../js/script.js"></script>
 
 </p>  
 
    
-
+</div>
 
 </div>
+
+
+
+
+
+
+
 
 </div>
 

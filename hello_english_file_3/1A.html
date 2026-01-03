@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingles</title>
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos1.css">
     
 
 </head>
@@ -29,25 +29,25 @@
 
 
 
-
-
-<div id="texto_2">Última actualización 14/12/2025</div>
-
 <div id="segmento">
 
-
+<div class="lesson-reader">
 
    
 <p>
                                         
+                                        
 <div class="player-fixed">
                                         
 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/1bT9S9KjWKTvrKI4xmcn3P?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>                                        
+
 </div>
 
-<br><br>
+                                        
+
 
 <div id="texto">
+
 ¡Hola, hola! Bienvenidos a un nuevo episodio de Hello English! Hoy presentamos la clase titulada <span id="sufijo_20">Mood food</span> – <span id="sufijo_14">Comida para el estado de ánimo</span>. Nuestro objetivo será aprender vocabulario nuevo sobre comida y cocina, hablar sobre cómo los alimentos afectan nuestras emociones, practicar el presente simple y continuo, diferenciar entre verbos de acción y verbos de estado, y disfrutar una historia en inglés sobre un experto en comida que nos explica la conexión entre lo que comemos y cómo nos sentimos.
 <br><br>
 ¡Exacto! Y es un tema súper interesante porque todos comemos todos los días, pero pocas veces pensamos en cómo la comida realmente afecta nuestro cerebro y nuestras emociones. <span id="sufijo_20">Today we're going to learn a lot</span> – <span id="sufijo_14">Hoy vamos a aprender mucho</span>.
@@ -304,111 +304,29 @@ Bueno amigos, eso es todo por hoy. <span id="sufijo_20">We hope you enjoyed this
 Y recuerden: <span id="sufijo_20">good food makes a good mood</span> – <span id="sufijo_14">buena comida hace un buen estado de ánimo</span>. ¡Hasta la próxima en <span id="sufijo_20">Hello English</span>!
 <br><br>
 ¡Adiós y buen provecho!
+
+
 </div>
 
+<script src="../js/script.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const cont = document.getElementById("texto");
-  let index = -1;
-  let segments = [];
-
-  // --- Reconstrucción por líneas manteniendo <br> y <ul>/<li> ---
-  const frag = document.createDocumentFragment();
-  let buffer = [];
-
-  function pushLineSegment() {
-    // Evitar líneas vacías puras
-    if (
-      buffer.length === 1 &&
-      buffer[0].nodeType === Node.TEXT_NODE &&
-      buffer[0].textContent.trim() === ""
-    ) {
-      buffer = [];
-      return;
-    }
-    if (buffer.length) {
-      const span = document.createElement("span");
-      span.className = "segment"; // inline por defecto
-      buffer.forEach(n => span.appendChild(n));
-      frag.appendChild(span);
-      segments.push(span);
-      buffer = [];
-    }
-  }
-
-  Array.from(cont.childNodes).forEach(node => {
-    if (node.nodeName === "BR") {
-      pushLineSegment();
-      frag.appendChild(document.createElement("br"));
-    } else if (node.nodeName === "UL") {
-      // Cerrar cualquier línea antes de insertar la lista
-      pushLineSegment();
-
-      // Para cada <li>, creamos un inner inline para resaltar sin tocar el <li>
-      node.querySelectorAll(":scope > li").forEach(li => {
-        if (!li.__wrappedForHighlight) {
-          const inner = document.createElement("span");
-          inner.className = "segment-inner"; // inline
-          // Mover todo el contenido del li dentro del inner
-          while (li.firstChild) inner.appendChild(li.firstChild);
-          li.appendChild(inner);
-          li.__wrappedForHighlight = true;
-        }
-        // Guardamos el "inner" como segmento (no el <li>)
-        const innerRef = li.querySelector(":scope > .segment-inner");
-        segments.push(innerRef);
-      });
-
-      frag.appendChild(node); // conservar la lista tal cual
-    } else {
-      buffer.push(node);
-    }
-  });
-  // último grupo
-  pushLineSegment();
-
-  // Sustituir contenido por el fragmento
-  cont.innerHTML = "";
-  cont.appendChild(frag);
-
-  // --- Navegación y pintado ---
-  function clearHighlights() {
-    segments.forEach(el => el.classList.remove("segment-highlight"));
-  }
-
-  function paint() {
-    clearHighlights();
-    if (index >= 0 && segments[index]) {
-      const el = segments[index];
-      el.classList.add("segment-highlight");
-      // NO tocar display/width para evitar saltos en <li>
-      el.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  }
-
-  document.addEventListener("keydown", e => {
-    if (e.key === "Tab") {
-      e.preventDefault();
-      if (!segments.length) return;
-      index = (index + 1) % segments.length;
-      paint();
-    } else if (e.key === "Backspace") {
-      e.preventDefault();
-      if (!segments.length) return;
-      index = (index - 1 + segments.length) % segments.length;
-      paint();
-    }
-  });
-});
-</script>
 
 </p>  
 
    
-
+</div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
 
 </div>
 
